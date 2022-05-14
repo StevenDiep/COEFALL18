@@ -6,7 +6,7 @@
 
 
 # hlsearch on (H) or off (h):
-~H
+~h
 # Last Search Pattern:
 ~Msle0~/\<include\>
 
@@ -15,16 +15,25 @@ $
 
 # Command Line History (newest to oldest):
 :wq
-:q
-:WQ
 :q!
+:q
+:Q
+:noh
 :s
+:wa
+:WQ
 :w
+:q~
 :wq!
 :d
 
 # Search String History (newest to oldest):
 ? \<include\>
+? \<using\>
+? \<endl\>
+? \<100\>
+? \<get\>
+? \<rd\>
 ?// Challenge 9.1
 ? \<A\>
 ? '};
@@ -38,1205 +47,570 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-""0	CHAR	0
-	#include<iostream>
-	
-	using std::cin;
-	using std::cout;
-	using std::endl;
-	
-	class Person{
-		private:int status; int stable; int i;
-		public:
-		Person(){status = 0;stable = 0;i = -1;}
-	
-		int status_string(){
-		if (status == 0)
-	 	  cout<<"Joe is susceptible"<<endl;
-		else if (status == 1)
-		  cout<<"Joe is sick ("<<i<< " to go)"<<endl;
-		else if (status == 2)
-		  cout<<"Joe is recovered"<<endl;
-		};
-	
-		void update(){
-	        if (i>0)
-		 {
-		  i--;
-		 }
-	        if (i == 0 && status == 1)
-		 {
-	          stable = 1;
-		  status = 2;
-	 	 }
-		};
-	
-		void infect(int n){
-		  if (stable == 0)
-		   {
-		    status = 1;
-		    i = n;
-		   }
-		};
-	
-		void is_stable(){
-		if (stable == 1)
-		  cout<<"Joe has been sick and is stable"<<endl;
-		else 
-		  cout<<"Joe has not been sick yet"<<endl;
-		};
-		
-		double get_stable() {return stable;};
-	};
-	
-"1	CHAR	0
-	#include<iostream>
-	
-	using std::cin;
-	using std::cout;
-	using std::endl;
-	
-	class Person{
-		private:int status; int stable; int i;
-		public:
-		Person(){status = 0;stable = 0;i = -1;}
-	
-		int status_string(){
-		if (status == 0)
-	 	  cout<<"Joe is susceptible"<<endl;
-		else if (status == 1)
-		  cout<<"Joe is sick ("<<i<< " to go)"<<endl;
-		else if (status == 2)
-		  cout<<"Joe is recovered"<<endl;
-		};
-	
-		void update(){
-	        if (i>0)
-		 {
-		  i--;
-		 }
-	        if (i == 0 && status == 1)
-		 {
-	          stable = 1;
-		  status = 2;
-	 	 }
-		};
-	
-		void infect(int n){
-		  if (stable == 0)
-		   {
-		    status = 1;
-		    i = n;
-		   }
-		};
-	
-		void is_stable(){
-		if (stable == 1)
-		  cout<<"Joe has been sick and is stable"<<endl;
-		else 
-		  cout<<"Joe has not been sick yet"<<endl;
-		};
-		
-		double get_stable() {return stable;};
-	};
-	
-"2	CHAR	0
-	#include<iostream>
-	
-	using std::cin;
-	using std::cout;
-	using std::endl;
-	
-	class Person{
-		private:int status; int stable; int i;
-		public:
-		Person(){status = 0;stable = 0;i = -1;}
-	
-		int status_string(){
-		if (status == 0)
-	 	  cout<<"Joe is susceptible"<<endl;
-		else if (status == 1)
-		  cout<<"Joe is sick ("<<i<< " to go)"<<endl;
-		else if (status == 2)
-		  cout<<"Joe is recovered"<<endl;
-		};
-	
-		void update(){
-	        if (i>0)
-		 {
-		  i--;
-		 }
-	        if (i == 0 && status == 1)
-		 {
-	          stable = 1;
-		  status = 2;
-	 	 }
-		};
-	
-		void infect(int n){
-		  if (stable == 0)
-		   {
-		    status = 1;
-		    i = n;
-		   }
-		};
-	
-		void is_stable(){
-		if (stable == 1)
-		  cout<<"Joe has been sick and is stable"<<endl;
-		else 
-		  cout<<"Joe has not been sick yet"<<endl;
-		};
-		
-		double get_stable() {return stable;};
-	};
-	
-"3	CHAR	0
-	#include<iostream>
-	
-	using std::cin;
-	using std::cout;
-	using std::endl;
-	
-	class Person{
-		private:int status; int stable; int i;
-		public:
-		Person(){status = 0;stable = 0;i = -1;}
-	
-		int status_string(){
-		if (status == 0)
-	 	  cout<<"Joe is susceptible"<<endl;
-		else if (status == 1)
-		  cout<<"Joe is sick ("<<i<< " to go)"<<endl;
-		else if (status == 2)
-		  cout<<"Joe is recovered"<<endl;
-		};
-	
-		void update(){
-	        if (i>0)
-		 {
-		  i--;
-		 }
-	        if (i == 0 && status == 1)
-		 {
-	          stable = 1;
-		  status = 2;
-	 	 }
-		};
-	
-		void infect(int n){
-		  if (stable == 0)
-		   {
-		    status = 1;
-		    i = n;
-		   }
-		};
-	
-		void is_stable(){
-		if (stable == 1)
-		  cout<<"Joe has been sick and is stable"<<endl;
-		else 
-		  cout<<"Joe has not been sick yet"<<endl;
-		};
-		
-		double get_stable() {return stable;};
-	};
-	
+"0	CHAR	0
+		cout<<"The angle 1 is = "<<atan(a/b) * 180/M_PI<< endl;
+	}
+"1	LINE	0
+		cout<<a/b<<endl;
+"2	LINE	0
+		float b = 3;
+"3	LINE	0
+		int a = 5;
 "4	LINE	0
-	" ============================================================================
-	" Netrw Directory Listing                                        (netrw v149)
-	"   /
-	"   Sorted by      name
-	"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
-	"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:exec
-	" ============================================================================
-	../
-	./
-	boot/
-	dev/
-	etc/
-	home/
-	media/
-	mnt/
-	opt/
-	proc/
-	root/
-	run/
-	srv/
-	sys/
-	tmp/
-	usr/
-	var/
-	.autorelabel
-	bin@
-	lib64@
-	lib@
-	sbin@
+		cout<<"The hypotenuse is = "<<sqrt(pow(a,2) + pow(b,2))<<endl;
 "5	LINE	0
-	" ============================================================================
-	" Netrw Directory Listing                                        (netrw v149)
-	"   /
-	"   Sorted by      name
-	"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
-	"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:exec
-	" ============================================================================
-	../
-	./
-	boot/
-	dev/
-	etc/
-	home/
-	media/
-	mnt/
-	opt/
-	proc/
-	root/
-	run/
-	srv/
-	sys/
-	tmp/
-	usr/
-	var/
-	.autorelabel
-	bin@
-	lib64@
-	lib@
-	sbin@
-"6	LINE	0
-	" ============================================================================
-	" Netrw Directory Listing                                        (netrw v149)
-	"   /
-	"   Sorted by      name
-	"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
-	"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:exec
-	" ============================================================================
-	../
-	./
-	boot/
-	dev/
-	etc/
-	home/
-	media/
-	mnt/
-	opt/
-	proc/
-	root/
-	run/
-	srv/
-	sys/
-	tmp/
-	usr/
-	var/
-	.autorelabel
-	bin@
-	lib64@
-	lib@
-	sbin@
-"7	LINE	0
-	" ============================================================================
-	" Netrw Directory Listing                                        (netrw v149)
-	"   /home/stevend/intel
-	"   Sorted by      name
-	"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
-	"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:exec
-	" ============================================================================
-	../
-	intel/
-	| ism/
-"8	LINE	0
-	ism/
-"9	LINE	0
-	./
-"-	CHAR	0
-	1
+	103882
+<{"dataset": [{"Date": "01/01/2006", "Consumption": 1069}, {"Date": "01/05/2006",                                                                                         "Consumption": 1477}, {"Date": "01/09/2006", "Consumption": 1529}, {"Date": "01                                                                                        /13/2006", "Consumption": 1545}, {"Date": "01/17/2006", "Consumption": 1598}, {"                                                                                        Date": "01/21/2006", "Consumption": 1348}, {"Date": "01/25/2006", "Consumption":                                                                                         1613}, {"Date": "01/29/2006", "Consumption": 1252}, {"Date": "02/02/2006", "Con                                                                                        sumption": 1595}, {"Date": "02/06/2006", "Consumption": 1557}, {"Date": "02/10/2                                                                                        006", "Consumption": 1554}, {"Date": "02/14/2006", "Consumption": 1551}, {"Date"                                                                                        : "02/18/2006", "Consumption": 1297}, {"Date": "02/22/2006", "Consumption": 1543                                                                                        }, {"Date": "02/26/2006", "Consumption": 1204}, {"Date": "03/02/2006", "Consumpt                                                                                        ion": 1539}, {"Date": "03/06/2006", "Consumption": 1502}, {"Date": "03/10/2006",                                                                                         "Consumption": 1475}, {"Date": "03/14/2006", "Consumption": 1514}, {"Date": "03                                                                                        /18/2006", "Consumption": 1280}, {"Date": "03/22/2006", "Consumption": 1471}, {"                                                                                        Date": "03/26/2006", "Consumption": 1116}, {"Date": "03/30/2006", "Consumption":                                                                                         1457}, {"Date": "04/03/2006", "Consumption": 1422}, {"Date": "04/07/2006", "Con                                                                                        sumption": 1394}, {"Date": "04/11/2006", "Consumption": 1419}, {"Date": "04/15/2                                                                                        006", "Consumption": 1086}, {"Date": "04/19/2006", "Consumption": 1368}, {"Date"                                                                                        : "04/23/2006", "Consumption": 1042}, {"Date": "04/27/2006", "Consumption": 1384                                                                                        }, {"Date": "05/01/2006", "Consumption": 986}, {"Date": "05/05/2006", "Consumpti                                                                                        on": 1330}, {"Date": "05/09/2006", "Consumption": 1353}, {"Date": "05/13/2006",                                                                                         "Consumption": 1123}, {"Date": "05/17/2006", "Consumption": 1346}, {"Date": "05/                                                                                        21/2006", "Consumption": 1050}, {"Date": "05/25/2006", "Consumption": 1053}, {"D                                                                                        ate": "05/29/2006", "Consumption": 1349}, {"Date": "06/02/2006", "Consumption":                                                                                         1323}, {"Date": "06/06/2006", "Consumption": 1306}, {"Date": "06/10/2006", "Cons                                                                                        umption": 1114}, {"Date": "06/14/2006", "Consumption": 1352}, {"Date": "06/18/20                                                                                        06", "Consumption": 1007}, {"Date": "06/22/2006", "Consumption": 1360}, {"Date":                                                                                         "06/26/2006", "Consumption": 1345}, {"Date": "06/30/2006", "Consumption": 1298}                                                                                        , {"Date": "07/04/2006", "Consumption": 1356}, {"Date": "07/08/2006", "Consumpti                                                                                        on": 1138}, {"Date": "07/12/2006", "Consumption": 1358}, {"Date": "07/16/2006",                                                                                         "Consumption": 993}, {"Date": "07/20/2006", "Consumption": 1351}, {"Date": "07/2                                                                                        4/2006", "Consumption": 1330}, {"Date": "07/28/2006", "Consumption": 1327}, {"Da                                                                                        te": "08/01/2006", "Consumption": 1303}, {"Date": "08/05/2006", "Consumption": 1                                                                                        087}, {"Date": "08/09/2006", "Consumption": 1285}, {"Date": "08/13/2006", "Consu                                                                                        mption": 985}, {"Date": "08/17/2006", "Consumption": 1298}, {"Date": "08/21/2006                                                                                        ", "Consumption": 1320}, {"Date": "08/25/2006", "Consumption": 1323}, {"Date": "                                                                                        08/29/2006", "Consumption": 1353}, {"Date": "09/02/2006", "Consumption": 1138},                                                                                         {"Date": "09/06/2006", "Consumption": 1394}, {"Date": "09/10/2006", "Consumption                                                                                        ": 1047}, {"Date": "09/14/2006", "Consumption": 1400}, {"Date": "09/18/2006", "C                                                                                        onsumption": 1390}, {"Date": "09/22/2006", "Consumption": 1380}, {"Date": "09/26                                                                                        /2006", "Consumption": 1424}, {"Date": "09/30/2006", "Consumption": 1173}, {"Dat                                                                                        e": "10/04/2006", "Consumption": 1375}, {"Date": "10/08/2006", "Consumption": 10                                                                                        97}, {"Date": "10/12/2006", "Consumption": 1432}, {"Date": "10/16/2006", "Consum                                                                                        ption": 1415}, {"Date": "10/20/2006", "Consumption": 1434}, {"Date": "10/24/2006                                                                                        ", "Consumption": 1504}, {"Date": "10/28/2006", "Consumption": 1242}, {"Date": "                                                                                        11/01/2006", "Consumption": 1352}, {"Date": "11/05/2006", "Consumption": 1242},                                                                                         {"Date": "11/09/2006", "Consumption": 1557}, {"Date": "11/13/2006", "Consumption                                                                                        ": 1533}, {"Date": "11/17/2006", "Consumption": 1478}, {"Date": "11/21/2006", "C                                                                                        onsumption": 1521}, {"Date": "11/25/2006", "Consumption": 1304}, {"Date": "11/29                                                                                        /2006", "Consumption": 1532}, {"Date": "12/03/2006", "Consumption": 1214}, {"Dat                                                                                        e": "12/07/2006", "Consumption": 1566}, {"Date": "12/11/2006", "Consumption": 15                                                                                        78}, {"Date": "12/15/2006", "Consumption": 1543}, {"Date": "12/19/2006", "Consum                                                                                        ption": 1525}, {"Date": "12/23/2006", "Consumption": 1235}, {"Date": "12/27/2006                                                                                        ", "Consumption": 1284}, {"Date": "12/31/2006", "Consumption": 1144}, {"Date": "                                                                                        01/04/2007", "Consumption": 1514}, {"Date": "01/08/2007", "Consumption": 1510},                                                                                         {"Date": "01/12/2007", "Consumption": 1567}, {"Date": "01/16/2007", "Consumption                                                                                        ": 1550}, {"Date": "01/20/2007", "Consumption": 1344}, {"Date": "01/24/2007", "C                                                                                        onsumption": 1582}, {"Date": "01/28/2007", "Consumption": 1321}, {"Date": "02/01                                                                                        /2007", "Consumption": 1531}, {"Date": "02/05/2007", "Consumption": 1484}, {"Dat                                                                                        e": "02/09/2007", "Consumption": 1549}, {"Date": "02/13/2007", "Consumption": 15                                                                                        26}, {"Date": "02/17/2007", "Consumption": 1302}, {"Date": "02/21/2007", "Consum                                                                                        ption": 1502}, {"Date": "02/25/2007", "Consumption": 1190}, {"Date": "03/01/2007                                                                                        ", "Consumption": 1524}, {"Date": "03/05/2007", "Consumption": 1487}, {"Date": "                                                                                        03/09/2007", "Consumption": 1453}, {"Date": "03/13/2007", "Consumption": 1438},                                                                                         {"Date": "03/17/2007", "Consumption": 1322}, {"Date": "03/21/2007", "Consumption                                                                                        ": 1510}, {"Date": "03/25/2007", "Consumption": 1157}, {"Date": "03/29/2007", "C                                                                                        onsumption": 1453}, {"Date": "04/02/2007", "Consumption": 1394}, {"Date": "04/06                                                                                        /2007", "Consumption": 1108}, {"Date": "04/10/2007", "Consumption": 1392}, {"Dat                                                                                        e": "04/14/2007", "Consumption": 1172}, {"Date": "04/18/2007", "Consumption": 14                                                                                        10}, {"Date": "04/22/2007", "Consumption": 1043}, {"Date": "04/26/2007", "Consum                                                                                        ption": 1381}, {"Date": "04/30/2007", "Consumption": 1221}, {"Date": "05/04/2007                                                                                        ", "Consumption": 1363}, {"Date": "05/08/2007", "Consumption": 1422}, {"Date": "                                                                                        05/12/2007", "Consumption": 1183}, {"Date": "05/16/2007", "Consumption": 1380},                                                                                         {"Date": "05/20/2007", "Consumption": 1020}, {"Date": "05/24/2007", "Consumption                                                                                        ": 1381}, {"Date": "05/28/2007", "Consumption": 1010}, {"Date": "06/01/2007", "C                                                                                        onsumption": 1349}, {"Date": "06/05/2007", "Consumption": 1368}, {"Date": "06/09                                                                                        /2007", "Consumption": 1145}, {"Date": "06/13/2007", "Consumption": 1392}, {"Dat                                                                                        e": "06/17/2007", "Consumption": 1044}, {"Date": "06/21/2007", "Consumption": 14                                                                                        05}, {"Date": "06/25/2007", "Consumption": 1377}, {"Date": "06/29/2007", "Consum                                                                                        ption": 1361}, {"Date": "07/03/2007", "Consumption": 1375}, {"Date": "07/07/2007                                                                                        ", "Consumption": 1183}, {"Date": "07/11/2007", "Consumption": 1365}, {"Date": "                                                                                        07/15/2007", "Consumption": 1037}, {"Date": "07/19/2007", "Consumption": 1370},                                                                                         {"Date": "07/23/2007", "Consumption": 1335}, {"Date": "07/27/2007", "Consumption                                                                                        ": 1341}, {"Date": "07/31/2007", "Consumption": 1323}, {"Date": "08/04/2007", "C                                                                                        onsumption": 1101}, {"Date": "08/08/2007", "Consumption": 1371}, {"Date": "08/12                                                                                        /2007", "Consumption": 997}, {"Date": "08/16/2007", "Consumption": 1308}, {"Date                                                                                        ": "08/20/2007", "Consumption": 1373}, {"Date": "08/24/2007", "Consumption": 136                                                                                        0}, {"Date": "08/28/2007", "Consumption": 1390}, {"Date": "09/01/2007", "Consump                                                                                        tion": 1193}, {"Date": "09/05/2007", "Consumption": 1407}, {"Date": "09/09/2007"                                                                                        , "Consumption": 1130}, {"Date": "09/13/2007", "Consumption": 1411}, {"Date": "0                                                                                        9/17/2007", "Consumption": 1425}, {"Date": "09/21/2007", "Consumption": 1417}, {                                                                                        "Date": "09/25/2007", "Consumption": 1455}, {"Date": "09/29/2007", "Consumption"                                                                                        : 1260}, {"Date": "10/03/2007", "Consumption": 1158}, {"Date": "10/07/2007", "Co                                                                                        nsumption": 1106}, {"Date": "10/11/2007", "Consumption": 1470}, {"Date": "10/15/                                                                                        2007", "Consumption": 1449}, {"Date": "10/19/2007", "Consumption": 1501}, {"Date                                                                                        ": "10/23/2007", "Consumption": 1538}, {"Date": "10/27/2007", "Consumption": 129                                                                                        6}, {"Date": "10/31/2007", "Consumption": 1472}, {"Date": "11/04/2007", "Consump                                                                                        tion": 1186}, {"Date": "11/08/2007", "Consumption": 1580}, {"Date": "11/12/2007"                                                                                        , "Consumption": 1553}, {"Date": "11/16/2007", "Consumption": 1544}, {"Date": "1                                                                                        1/20/2007", "Consumption": 1573}, {"Date": "11/24/2007", "Consumption": 1351}, {                                                                                        "Date": "11/28/2007", "Consumption": 1587}, {"Date": "12/02/2007", "Consumption"                                                                                        : 1299}, {"Date": "12/06/2007", "Consumption": 1587}, {"Date": "12/10/2007", "Co                                                                                        nsumption": 1545}, {"Date": "12/14/2007", "Consumption": 1546}, {"Date": "12/18/                                                                                        2007", "Consumption": 1564}, {"Date": "12/22/2007", "Consumption": 1305}, {"Date                                                                                        ": "12/26/2007", "Consumption": 1120}, {"Date": "12/30/2007", "Consumption": 114                                                                                        2}, {"Date": "01/03/2008", "Consumption": 1523}, {"Date": "01/07/2008", "Consump                                                                                        tion": 1542}, {"Date": "01/11/2008", "Consumption": 1551}, {"Date": "01/15/2008"                                                                                        , "Consumption": 1596}, {"Date": "01/19/2008", "Consumption": 1352}, {"Date": "0                                                                                        1/23/2008", "Consumption": 1557}, {"Date": "01/27/2008", "Consumption": 1272}, {                                                                                        "Date": "01/31/2008", "Consumption": 1593}, {"Date": "02/04/2008", "Consumption"                                                                                        : 1481}, {"Date": "02/08/2008", "Consumption": 1503}, {"Date": "02/12/2008", "Co                                                                                        nsumption": 1523}, {"Date": "02/16/2008", "Consumption": 1326}, {"Date": "02/20/                                                                                        2008", "Consumption": 1551}, {"Date": "02/24/2008", "Consumption": 1191}, {"Date                                                                                        ": "02/28/2008", "Consumption": 1513}, {"Date": "03/03/2008", "Consumption": 151                                                                                        9}, {"Date": "03/07/2008", "Consumption": 1488}, {"Date": "03/11/2008", "Consump                                                                                        tion": 1531}, {"Date": "03/15/2008", "Consumption": 1267}, {"Date": "03/19/2008"                                                                                        , "Consumption": 1502}, {"Date": "03/23/2008", "Consumption": 1088}, {"Date": "0                                                                                        3/27/2008", "Consumption": 1495}, {"Date": "03/31/2008", "Consumption": 1435}, {                                                                                        "Date": "04/04/2008", "Consumption": 1465}, {"Date": "04/08/2008", "Consumption"                                                                                        : 1472}, {"Date": "04/12/2008", "Consumption": 1229}, {"Date": "04/16/2008", "Co                                                                                        nsumption": 1467}, {"Date": "04/20/2008", "Consumption": 1110}, {"Date": "04/24/                                                                                        2008", "Consumption": 1416}, {"Date": "04/28/2008", "Consumption": 1409}, {"Date                                                                                        ": "05/02/2008", "Consumption": 1201}, {"Date": "05/06/2008", "Consumption": 138                                                                                        2}, {"Date": "05/10/2008", "Consumption": 1120}, {"Date": "05/14/2008", "Consump                                                                                        tion": 1368}, {"Date": "05/18/2008", "Consumption": 1062}, {"Date": "05/22/2008"                                                                                        , "Consumption": 1163}, {"Date": "05/26/2008", "Consumption": 1381}, {"Date": "0                                                                                        5/30/2008", "Consumption": 1399}, {"Date": "06/03/2008", "Consumption": 1389}, {                                                                                        "Date": "06/07/2008", "Consumption": 1165}, {"Date": "06/11/2008", "Consumption"                                                                                        : 1371}, {"Date": "06/15/2008", "Consumption": 1035}, {"Date": "06/19/2008", "Co                                                                                        nsumption": 1371}, {"Date": "06/23/2008", "Consumption": 1380}, {"Date": "06/27/                                                                                        2008", "Consumption": 1372}, {"Date": "07/01/2008", "Consumption": 1380}, {"Date                                                                                        ": "07/05/2008", "Consumption": 1129}, {"Date": "07/09/2008", "Consumption": 136                                                                                        9}, {"Date": "07/13/2008", "Consumption": 1029}, {"Date": "07/17/2008", "Consump                                                                                        tion": 1362}, {"Date": "07/21/2008", "Consumption": 1334}, {"Date": "07/25/2008"                                                                                        , "Consumption": 1314}, {"Date": "07/29/2008", "Consumption": 1359}, {"Date": "0                                                                                        8/02/2008", "Consumption": 1117}, {"Date": "08/06/2008", "Consumption": 1334}, {                                                                                        "Date": "08/10/2008", "Consumption": 1047}, {"Date": "08/14/2008", "Consumption"                                                                                        : 1359}, {"Date": "08/18/2008", "Consumption": 1337}, {"Date": "08/22/2008", "Co                                                                                        nsumption": 1352}, {"Date": "08/26/2008", "Consumption": 1372}, {"Date": "08/30/                                                                                        2008", "Consumption": 1133}, {"Date": "09/03/2008", "Consumption": 1409}, {"Date                                                                                        ": "09/07/2008", "Consumption": 1073}, {"Date": "09/11/2008", "Consumption": 140                                                                                        6}, {"Date": "09/15/2008", "Consumption": 1395}, {"Date": "09/19/2008", "Consump                                                                                        tion": 1396}, {"Date": "09/23/2008", "Consumption": 1471}, {"Date": "09/27/2008"                                                                                        , "Consumption": 1182}, {"Date": "10/01/2008", "Consumption": 1519}, {"Date": "1                                                                                        0/05/2008", "Consumption": 1170}, {"Date": "10/09/2008", "Consumption": 1440}, {                                                                                        "Date": "10/13/2008", "Consumption": 1426}, {"Date": "10/17/2008", "Consumption"                                                                                        : 1467}, {"Date": "10/21/2008", "Consumption": 1494}, {"Date": "10/25/2008", "Co                                                                                        nsumption": 1232}, {"Date": "10/29/2008", "Consumption": 1501}, {"Date": "11/02/                                                                                        2008", "Consumption": 1126}, {"Date": "11/06/2008", "Consumption": 1473}, {"Date                                                                                        ": "11/10/2008", "Consumption": 1519}, {"Date": "11/14/2008", "Consumption": 148                                                                                        5}, {"Date": "11/18/2008", "Consumption": 1533}, {"Date": "11/22/2008", "Consump                                                                                        tion": 1306}, {"Date": "11/26/2008", "Consumption": 1553}, {"Date": "11/30/2008"                                                                                        , "Consumption": 1178}, {"Date": "12/04/2008", "Consumption": 1535}, {"Date": "1                                                                                        2/08/2008", "Consumption": 1486}, {"Date": "12/12/2008", "Consumption": 1469}, {                                                                                        "Date": "12/16/2008", "Consumption": 1469}, {"Date": "12/20/2008", "Consumption"                                                                                        : 1258}, {"Date": "12/24/2008", "Consumption": 1086}, {"Date": "12/28/2008", "Co                                                                                        nsumption": 1047}, {"Date": "01/01/2009", "Consumption": 1018}, {"Date": "01/05/                                                                                        2009", "Consumption": 1333}, {"Date": "01/09/2009", "Consumption": 1453}, {"Date                                                                                        ": "01/13/2009", "Consumption": 1538}, {"Date": "01/17/2009", "Consumption": 126                                                                                        4}, {"Date": "01/21/2009", "Consumption": 1461}, {"Date": "01/25/2009", "Consump                                                                                        tion": 1121}, {"Date": "01/29/2009", "Consumption": 1439}, {"Date": "02/02/2009"                                                                                        , "Consumption": 1532}, {"Date": "02/06/2009", "Consumption": 1438}, {"Date": "0                                                                                        2/10/2009", "Consumption": 1521}, {"Date": "02/14/2009", "Consumption": 1257}, {                                                                                        "Date": "02/18/2009", "Consumption": 1493}, {"Date": "02/22/2009", "Consumption"                                                                                        : 1164}, {"Date": "02/26/2009", "Consumption": 1469}, {"Date": "03/02/2009", "Co                                                                                        nsumption": 1413}, {"Date": "03/06/2009", "Consumption": 1401}, {"Date": "03/10/                                                                                        2009", "Consumption": 1442}, {"Date": "03/14/2009", "Consumption": 1118}, {"Date                                                                                        ": "03/18/2009", "Consumption": 1367}, {"Date": "03/22/2009", "Consumption": 113                                                                                        0}, {"Date": "03/26/2009", "Consumption": 1387}, {"Date": "03/30/2009", "Consump                                                                                        tion": 1332}, {"Date": "04/03/2009", "Consumption": 1234}, {"Date": "04/07/2009"                                                                                        , "Consumption": 1251}, {"Date": "04/11/2009", "Consumption": 941}, {"Date": "04                                                                                        /15/2009", "Consumption": 1203}, {"Date": "04/19/2009", "Consumption": 944}, {"D                                                                                        ate": "04/23/2009", "Consumption": 1280}, {"Date": "04/27/2009", "Consumption":                                                                                         1261}, {"Date": "05/01/2009", "Consumption": 910}, {"Date": "05/05/2009", "Consu                                                                                        mption": 1324}, {"Date": "05/09/2009", "Consumption": 1047}, {"Date": "05/13/200                                                                                        9", "Consumption": 1297}, {"Date": "05/17/2009", "Consumption": 952}, {"Date": "                                                                                        05/21/2009", "Consumption": 939}, {"Date": "05/25/2009", "Consumption": 1244}, {                                                                                        "Date": "05/29/2009", "Consumption": 1216}, {"Date": "06/02/2009", "Consumption"                                                                                        : 1201}, {"Date": "06/06/2009", "Consumption": 1068}, {"Date": "06/10/2009", "Co                                                                                        nsumption": 1255}, {"Date": "06/14/2009", "Consumption": 931}, {"Date": "06/18/2                                                                                        009", "Consumption": 1279}, {"Date": "06/22/2009", "Consumption": 1238}, {"Date"                                                                                        : "06/26/2009", "Consumption": 1232}, {"Date": "06/30/2009", "Consumption": 1287                                                                                        }, {"Date": "07/04/2009", "Consumption": 1038}, {"Date": "07/08/2009", "Consumpt                                                                                        ion": 1247}, {"Date": "07/12/2009", "Consumption": 939}, {"Date": "07/16/2009",                                                                                         "Consumption": 1239}, {"Date": "07/20/2009", "Consumption": 1205}, {"Date": "07/                                                                                        24/2009", "Consumption": 1187}, {"Date": "07/28/2009", "Consumption": 1197}, {"D                                                                                        ate": "08/01/2009", "Consumption": 992}, {"Date": "08/05/2009", "Consumption": 1                                                                                        187}, {"Date": "08/09/2009", "Consumption": 948}, {"Date": "08/13/2009", "Consum                                                                                        ption": 1245}, {"Date": "08/17/2009", "Consumption": 1231}, {"Date": "08/21/2009                                                                                        ", "Consumption": 1257}, {"Date": "08/25/2009", "Consumption": 1290}, {"Date": "                                                                                        08/29/2009", "Consumption": 1052}, {"Date": "09/02/2009", "Consumption": 1325},                                                                                         {"Date": "09/06/2009", "Consumption": 986}, {"Date": "09/10/2009", "Consumption"                                                                                        : 1324}, {"Date": "09/14/2009", "Consumption": 1337}, {"Date": "09/18/2009", "Co                                                                                        nsumption": 1305}, {"Date": "09/22/2009", "Consumption": 1337}, {"Date": "09/26/                                                                                        2009", "Consumption": 1080}, {"Date": "09/30/2009", "Consumption": 1354}, {"Date                                                                                        ": "10/04/2009", "Consumption": 1107}, {"Date": "10/08/2009", "Consumption": 137                                                                                        2}, {"Date": "10/12/2009", "Consumption": 1373}, {"Date": "10/16/2009", "Consump                                                                                        tion": 1413}, {"Date": "10/20/2009", "Consumption": 1405}, {"Date": "10/24/2009"                                                                                        , "Consumption": 1183}, {"Date": "10/28/2009", "Consumption": 1401}, {"Date": "1                                                                                        1/01/2009", "Consumption": 1103}, {"Date": "11/05/2009", "Consumption": 1433}, {                                                                                        "Date": "11/09/2009", "Consumption": 1447}, {"Date": "11/13/2009", "Consumption"                                                                                        : 1406}, {"Date": "11/17/2009", "Consumption": 1445}, {"Date": "11/21/2009", "Co                                                                                        nsumption": 1201}, {"Date": "11/25/2009", "Consumption": 1476}, {"Date": "11/29/                                                                                        2009", "Consumption": 1152}, {"Date": "12/03/2009", "Consumption": 1491}, {"Date                                                                                        ": "12/07/2009", "Consumption": 1455}, {"Date": "12/11/2009", "Consumption": 146                                                                                        1}, {"Date": "12/15/2009", "Consumption": 1507}, {"Date": "12/19/2009", "Consump                                                                                        tion": 1321}, {"Date": "12/23/2009", "Consumption": 1322}, {"Date": "12/27/2009"                                                                                        , "Consumption": 1072}, {"Date": "12/31/2009", "Consumption": 1106}, {"Date": "0                                                                                        1/04/2010", "Consumption": 1346}, {"Date": "01/08/2010", "Consumption": 1489}, {                                                                                        "Date": "01/12/2010", "Consumption": 1555}, {"Date": "01/16/2010", "Consumption"                                                                                        : 1326}, {"Date": "01/20/2010", "Consumption": 1491}, {"Date": "01/24/2010", "Co                                                                                        nsumption": 1181}, {"Date": "01/28/2010", "Consumption": 1585}, {"Date": "02/01/                                                                                        2010", "Consumption": 1536}, {"Date": "02/05/2010", "Consumption": 1509}, {"Date                                                                                        ": "02/09/2010", "Consumption": 1556}, {"Date": "02/13/2010", "Consumption": 132                                                                                        5}, {"Date": "02/17/2010", "Consumption": 1540}, {"Date": "02/21/2010", "Consump                                                                                        tion": 1189}, {"Date": "02/25/2010", "Consumption": 1483}, {"Date": "03/01/2010"                                                                                        , "Consumption": 1527}, {"Date": "03/05/2010", "Consumption": 1509}, {"Date": "0                                                                                        3/09/2010", "Consumption": 1566}, {"Date": "03/13/2010", "Consumption": 1258}, {                                                                                        "Date": "03/17/2010", "Consumption": 1462}, {"Date": "03/21/2010", "Consumption"                                                                                        : 1069}, {"Date": "03/25/2010", "Consumption": 1366}, {"Date": "03/29/2010", "Co                                                                                        nsumption": 1351}, {"Date": "04/02/2010", "Consumption": 1062}, {"Date": "04/06/                                                                                        2010", "Consumption": 1314}, {"Date": "04/10/2010", "Consumption": 1162}, {"Date                                                                                        ": "04/14/2010", "Consumption": 1411}, {"Date": "04/18/2010", "Consumption": 102                                                                                        2}, {"Date": "04/22/2010", "Consumption": 1348}, {"Date": "04/26/2010", "Consump                                                                                        tion": 1347}, {"Date": "04/30/2010", "Consumption": 1327}, {"Date": "05/04/2010"                                                                                        , "Consumption": 1380}, {"Date": "05/08/2010", "Consumption": 1143}, {"Date": "0                                                                                        5/12/2010", "Consumption": 1388}, {"Date": "05/16/2010", "Consumption": 1081}, {                                                                                        "Date": "05/20/2010", "Consumption": 1387}, {"Date": "05/24/2010", "Consumption"                                                                                        : 972}, {"Date": "05/28/2010", "Consumption": 1308}, {"Date": "06/01/2010", "Con                                                                                        sumption": 1337}, {"Date": "06/05/2010", "Consumption": 1060}, {"Date": "06/09/2                                                                                        010", "Consumption": 1353}, {"Date": "06/13/2010", "Consumption": 1023}, {"Date"                                                                                        : "06/17/2010", "Consumption": 1342}, {"Date": "06/21/2010", "Consumption": 1310                                                                                        }, {"Date": "06/25/2010", "Consumption": 1308}, {"Date": "06/29/2010", "Consumpt                                                                                        ion": 1361}, {"Date": "07/03/2010", "Consumption": 1148}, {"Date": "07/07/2010",                                                                                         "Consumption": 1329}, {"Date": "07/11/2010", "Consumption": 1072}, {"Date": "07                                                                                        /15/2010", "Consumption": 1369}, {"Date": "07/19/2010", "Consumption": 1286}, {"                                                                                        Date": "07/23/2010", "Consumption": 1316}, {"Date": "07/27/2010", "Consumption":                                                                                         1302}, {"Date": "07/31/2010", "Consumption": 1070}, {"Date": "08/04/2010", "Con                                                                                        sumption": 1279}, {"Date": "08/08/2010", "Consumption": 1008}, {"Date": "08/12/2                                                                                        010", "Consumption": 1323}, {"Date": "08/16/2010", "Consumption": 1314}, {"Date"                                                                                        : "08/20/2010", "Consumption": 1299}, {"Date": "08/24/2010", "Consumption": 1380                                                                                        }, {"Date": "08/28/2010", "Consumption": 1134}, {"Date": "09/01/2010", "Consumpt                                                                                        ion": 1361}, {"Date": "09/05/2010", "Consumption": 1037}, {"Date": "09/09/2010",                                                                                         "Consumption": 1418}, {"Date": "09/13/2010", "Consumption": 1382}, {"Date": "09                                                                                        /17/2010", "Consumption": 1393}, {"Date": "09/21/2010", "Consumption": 1404}, {"                                                                                        Date": "09/25/2010", "Consumption": 1173}, {"Date": "09/29/2010", "Consumption":                                                                                         1419}, {"Date": "10/03/2010", "Consumption": 1087}, {"Date": "10/07/2010", "Con                                                                                        sumption": 1420}, {"Date": "10/11/2010", "Consumption": 1376}, {"Date": "10/15/2                                                                                        010", "Consumption": 1431}, {"Date": "10/19/2010", "Consumption": 1470}, {"Date"                                                                                        : "10/23/2010", "Consumption": 1250}, {"Date": "10/27/2010", "Consumption": 1480                                                                                        }, {"Date": "10/31/2010", "Consumption": 1118}, {"Date": "11/04/2010", "Consumpt                                                                                        ion": 1513}, {"Date": "11/08/2010", "Consumption": 1460}, {"Date": "11/12/2010",                                                                                         "Consumption": 1520}, {"Date": "11/16/2010", "Consumption": 1522}, {"Date": "11                                                                                        /20/2010", "Consumption": 1290}, {"Date": "11/24/2010", "Consumption": 1582}, {"                                                                                        Date": "11/28/2010", "Consumption": 1262}, {"Date": "12/02/2010", "Consumption":                                                                                         1664}, {"Date": "12/06/2010", "Consumption": 1576}, {"Date": "12/10/2010", "Con                                                                                        sumption": 1594}, {"Date": "12/14/2010", "Consumption": 1645}, {"Date": "12/18/2                                                                                        010", "Consumption": 1392}, {"Date": "12/22/2010", "Consumption": 1487}, {"Date"                                                                                        : "12/26/2010", "Consumption": 1149}, {"Date": "12/30/2010", "Consumption": 1332                                                                                        }, {"Date": "01/03/2011", "Consumption": 1422}, {"Date": "01/07/2011", "Consumpt                                                                                        ion": 1404}, {"Date": "01/11/2011", "Consumption": 1530}, {"Date": "01/15/2011",                                                                                         "Consumption": 1269}, {"Date": "01/19/2011", "Consumption": 1538}, {"Date": "01                                                                                        /23/2011", "Consumption": 1207}, {"Date": "01/27/2011", "Consumption": 1571}, {"                                                                                        Date": "01/31/2011", "Consumption": 1553}, {"Date": "02/04/2011", "Consumption":                                                                                         1532}, {"Date": "02/08/2011", "Consumption": 1505}, {"Date": "02/12/2011", "Con                                                                                        sumption": 1254}, {"Date": "02/16/2011", "Consumption": 1487}, {"Date": "02/20/2                                                                                        011", "Consumption": 1174}, {"Date": "02/24/2011", "Consumption": 1557}, {"Date"                                                                                        : "02/28/2011", "Consumption": 1471}, {"Date": "03/04/2011", "Consumption": 1470                                                                                        }, {"Date": "03/08/2011", "Consumption": 1448}, {"Date": "03/12/2011", "Consumpt                                                                                        ion": 1207}, {"Date": "03/16/2011", "Consumption": 1437}, {"Date": "03/20/2011",                                                                                         "Consumption": 1092}, {"Date": "03/24/2011", "Consumption": 1425}, {"Date": "03                                                                                        /28/2011", "Consumption": 1399}, {"Date": "04/01/2011", "Consumption": 1396}, {"                                                                                        Date": "04/05/2011", "Consumption": 1431}, {"Date": "04/09/2011", "Consumption":                                                                                         1187}, {"Date": "04/13/2011", "Consumption": 1473}, {"Date": "04/17/2011", "Con                                                                                        sumption": 1079}, {"Date": "04/21/2011", "Consumption": 1378}, {"Date": "04/25/2                                                                                        011", "Consumption": 1000}, {"Date": "04/29/2011", "Consumption": 1380}, {"Date"                                                                                        : "05/03/2011", "Consumption": 1420}, {"Date": "05/07/2011", "Consumption": 1176                                                                                        }, {"Date": "05/11/2011", "Consumption": 1418}, {"Date": "05/15/2011", "Consumpt                                                                                        ion": 1033}, {"Date": "05/19/2011", "Consumption": 1417}, {"Date": "05/23/2011",                                                                                         "Consumption": 1372}, {"Date": "05/27/2011", "Consumption": 1393}, {"Date": "05                                                                                        /31/2011", "Consumption": 1416}, {"Date": "06/04/2011", "Consumption": 1117}, {"                                                                                        Date": "06/08/2011", "Consumption": 1395}, {"Date": "06/12/2011", "Consumption":                                                                                         946}, {"Date": "06/16/2011", "Consumption": 1406}, {"Date": "06/20/2011", "Cons                                                                                        umption": 1340}, {"Date": "06/24/2011", "Consumption": 1253}, {"Date": "06/28/20                                                                                        11", "Consumption": 1383}, {"Date": "07/02/2011", "Consumption": 1108}, {"Date":                                                                                         "07/06/2011", "Consumption": 1391}, {"Date": "07/10/2011", "Consumption": 1023}                                                                                        , {"Date": "07/14/2011", "Consumption": 1359}, {"Date": "07/18/2011", "Consumpti                                                                                        on": 1318}, {"Date": "07/22/2011", "Consumption": 1307}, {"Date": "07/26/2011",                                                                                         "Consumption": 1297}, {"Date": "07/30/2011", "Consumption": 1054}, {"Date": "08/                                                                                        03/2011", "Consumption": 1298}, {"Date": "08/07/2011", "Consumption": 991}, {"Da                                                                                        te": "08/11/2011", "Consumption": 1255}, {"Date": "08/15/2011", "Consumption": 1                                                                                        218}, {"Date": "08/19/2011", "Consumption": 1287}, {"Date": "08/23/2011", "Consu                                                                                        mption": 1359}, {"Date": "08/27/2011", "Consumption": 1097}, {"Date": "08/31/201                                                                                        1", "Consumption": 1343}, {"Date": "09/04/2011", "Consumption": 1057}, {"Date":                                                                                         "09/08/2011", "Consumption": 1381}, {"Date": "09/12/2011", "Consumption": 1367},                                                                                         {"Date": "09/16/2011", "Consumption": 1360}, {"Date": "09/20/2011", "Consumptio                                                                                        n": 1383}, {"Date": "09/24/2011", "Consumption": 1131}, {"Date": "09/28/2011", "                                                                                        Consumption": 1395}, {"Date": "10/02/2011", "Consumption": 1039}, {"Date": "10/0                                                                                        6/2011", "Consumption": 1437}, {"Date": "10/10/2011", "Consumption": 1417}, {"Da                                                                                        te": "10/14/2011", "Consumption": 1409}, {"Date": "10/18/2011", "Consumption": 1                                                                                        462}, {"Date": "10/22/2011", "Consumption": 1220}, {"Date": "10/26/2011", "Consu                                                                                        mption": 1462}, {"Date": "10/30/2011", "Consumption": 1083}, {"Date": "11/03/201                                                                                        1", "Consumption": 1464}, {"Date": "11/07/2011", "Consumption": 1442}, {"Date":                                                                                         "11/11/2011", "Consumption": 1464}, {"Date": "11/15/2011", "Consumption": 1541},                                                                                         {"Date": "11/19/2011", "Consumption": 1266}, {"Date": "11/23/2011", "Consumptio                                                                                        n": 1557}, {"Date": "11/27/2011", "Consumption": 1159}, {"Date": "12/01/2011", "                                                                                        Consumption": 1528}, {"Date": "12/05/2011", "Consumption": 1487}, {"Date": "12/0                                                                                        9/2011", "Consumption": 1509}, {"Date": "12/13/2011", "Consumption": 1557}, {"Da                                                                                        te": "12/17/2011", "Consumption": 1281}, {"Date": "12/21/2011", "Consumption": 1                                                                                        485}, {"Date": "12/25/2011", "Consumption": 1011}, {"Date": "12/29/2011", "Consu                                                                                        mption": 1226}, {"Date": "01/02/2012", "Consumption": 1269}, {"Date": "01/06/201                                                                                        2", "Consumption": 1291}, {"Date": "01/10/2012", "Consumption": 1434}, {"Date":                                                                                         "01/14/2012", "Consumption": 1203}, {"Date": "01/18/2012", "Consumption": 1498},                                                                                         {"Date": "01/22/2012", "Consumption": 1120}, {"Date": "01/26/2012", "Consumptio                                                                                        n": 1483}, {"Date": "01/30/2012", "Consumption": 1454}, {"Date": "02/03/2012", "                                                                                        Consumption": 1563}, {"Date": "02/07/2012", "Consumption": 1615}, {"Date": "02/1                                                                                        1/2012", "Consumption": 1377}, {"Date": "02/15/2012", "Consumption": 1476}, {"Da                                                                                        te": "02/19/2012", "Consumption": 1107}, {"Date": "02/23/2012", "Consumption": 1                                                                                        427}, {"Date": "02/27/2012", "Consumption": 1436}, {"Date": "03/02/2012", "Consu                                                                                        mption": 1402}, {"Date": "03/06/2012", "Consumption": 1433}, {"Date": "03/10/201                                                                                        2", "Consumption": 1153}, {"Date": "03/14/2012", "Consumption": 1403}, {"Date":                                                                                         "03/18/2012", "Consumption": 1062}, {"Date": "03/22/2012", "Consumption": 1390},                                                                                         {"Date": "03/26/2012", "Consumption": 1330}, {"Date": "03/30/2012", "Consumptio                                                                                        n": 1277}, {"Date": "04/03/2012", "Consumption": 1340}, {"Date": "04/07/2012", "                                                                                        Consumption": 1048}, {"Date": "04/11/2012", "Consumption": 1398}, {"Date": "04/1                                                                                        5/2012", "Consumption": 1166}, {"Date": "04/19/2012", "Consumption": 1418}, {"Da                                                                                        te": "04/23/2012", "Consumption": 1310}, {"Date": "04/27/2012", "Consumption": 1                                                                                        400}, {"Date": "05/01/2012", "Consumption": 987}, {"Date": "05/05/2012", "Consum                                                                                        ption": 1131}, {"Date": "05/09/2012", "Consumption": 1375}, {"Date": "05/13/2012                                                                                        ", "Consumption": 1026}, {"Date": "05/17/2012", "Consumption": 1026}, {"Date": "                                                                                        05/21/2012", "Consumption": 1327}, {"Date": "05/25/2012", "Consumption": 1333},                                                                                         {"Date": "05/29/2012", "Consumption": 1308}, {"Date": "06/02/2012", "Consumption                                                                                        ": 1050}, {"Date": "06/06/2012", "Consumption": 1315}, {"Date": "06/10/2012", "C                                                                                        onsumption": 984}, {"Date": "06/14/2012", "Consumption": 1336}, {"Date": "06/18/                                                                                        2012", "Consumption": 1295}, {"Date": "06/22/2012", "Consumption": 1288}, {"Date                                                                                        ": "06/26/2012", "Consumption": 1280}, {"Date": "06/30/2012", "Consumption": 110                                                                                        9}, {"Date": "07/04/2012", "Consumption": 1357}, {"Date": "07/08/2012", "Consump                                                                                        tion": 979}, {"Date": "07/12/2012", "Consumption": 1270}, {"Date": "07/16/2012",                                                                                         "Consumption": 1244}, {"Date": "07/20/2012", "Consumption": 1254}, {"Date": "07                                                                                        /24/2012", "Consumption": 1298}, {"Date": "07/28/2012", "Consumption": 1068}, {"                                                                                        Date": "08/01/2012", "Consumption": 1281}, {"Date": "08/05/2012", "Consumption":                                                                                         970}, {"Date": "08/09/2012", "Consumption": 1251}, {"Date": "08/13/2012", "Cons                                                                                        umption": 1234}, {"Date": "08/17/2012", "Consumption": 1266}, {"Date": "08/21/20                                                                                        12", "Consumption": 1367}, {"Date": "08/25/2012", "Consumption": 1072}, {"Date":                                                                                         "08/29/2012", "Consumption": 1330}, {"Date": "09/02/2012", "Consumption": 1020}                                                                                        , {"Date": "09/06/2012", "Consumption": 1350}, {"Date": "09/10/2012", "Consumpti                                                                                        on": 1351}, {"Date": "09/14/2012", "Consumption": 1294}, {"Date": "09/18/2012",                                                                                         "Consumption": 1376}, {"Date": "09/22/2012", "Consumption": 1079}, {"Date": "09/                                                                                        26/2012", "Consumption": 1383}, {"Date": "09/30/2012", "Consumption": 1011}, {"D                                                                                        ate": "10/04/2012", "Consumption": 1295}, {"Date": "10/08/2012", "Consumption":                                                                                         1375}, {"Date": "10/12/2012", "Consumption": 1372}, {"Date": "10/16/2012", "Cons                                                                                        umption": 1413}, {"Date": "10/20/2012", "Consumption": 1168}, {"Date": "10/24/20                                                                                        12", "Consumption": 1448}, {"Date": "10/28/2012", "Consumption": 1099}, {"Date":                                                                                         "11/01/2012", "Consumption": 1203}, {"Date": "11/05/2012", "Consumption": 1395}                                                                                        , {"Date": "11/09/2012", "Consumption": 1440}, {"Date": "11/13/2012", "Consumpti                                                                                        on": 1473}, {"Date": "11/17/2012", "Consumption": 1222}, {"Date": "11/21/2012",                                                                                         "Consumption": 1470}, {"Date": "11/25/2012", "Consumption": 1079}, {"Date": "11/                                                                                        29/2012", "Consumption": 1451}, {"Date": "12/03/2012", "Consumption": 1484}, {"D                                                                                        ate": "12/07/2012", "Consumption": 1519}, {"Date": "12/11/2012", "Consumption":                                                                                         1520}, {"Date": "12/15/2012", "Consumption": 1220}, {"Date": "12/19/2012", "Cons                                                                                        umption": 1441}, {"Date": "12/23/2012", "Consumption": 1031}, {"Date": "12/27/20                                                                                        12", "Consumption": 1068}, {"Date": "12/31/2012", "Consumption": 969}, {"Date":                                                                                         "01/04/2013", "Consumption": 1198}, {"Date": "01/08/2013", "Consumption": 1397},                                                                                         {"Date": "01/12/2013", "Consumption": 1192}, {"Date": "01/16/2013", "Consumptio                                                                                        n": 1480}, {"Date": "01/20/2013", "Consumption": 1162}, {"Date": "01/24/2013", "                                                                                        Consumption": 1510}, {"Date": "01/28/2013", "Consumption": 1410}, {"Date": "02/0                                                                                        1/2013", "Consumption": 1379}, {"Date": "02/05/2013", "Consumption": 1400}, {"Da                                                                                        te": "02/09/2013", "Consumption": 1227}, {"Date": "02/13/2013", "Consumption": 1                                                                                        480}, {"Date": "02/17/2013", "Consumption": 1127}, {"Date": "02/21/2013", "Consu                                                                                        mption": 1454}, {"Date": "02/25/2013", "Consumption": 1420}, {"Date": "03/01/201                                                                                        3", "Consumption": 1372}, {"Date": "03/05/2013", "Consumption": 1359}, {"Date":                                                                                         "03/09/2013", "Consumption": 1160}, {"Date": "03/13/2013", "Consumption": 1425},                                                                                         {"Date": "03/17/2013", "Consumption": 1048}, {"Date": "03/21/2013", "Consumptio                                                                                        n": 1407}, {"Date": "03/25/2013", "Consumption": 1340}, {"Date": "03/29/2013", "                                                                                        Consumption": 1080}, {"Date": "04/02/2013", "Consumption": 1345}, {"Date": "04/0                                                                                        6/2013", "Consumption": 1189}, {"Date": "04/10/2013", "Consumption": 1386}, {"Da                                                                                        te": "04/14/2013", "Consumption": 1026}, {"Date": "04/18/2013", "Consumption": 1                                                                                        319}, {"Date": "04/22/2013", "Consumption": 1312}, {"Date": "04/26/2013", "Consu                                                                                        mption": 1309}, {"Date": "04/30/2013", "Consumption": 1317}, {"Date": "05/04/201                                                                                        3", "Consumption": 1106}, {"Date": "05/08/2013", "Consumption": 1326}, {"Date":                                                                                         "05/12/2013", "Consumption": 999}, {"Date": "05/16/2013", "Consumption": 1305},                                                                                         {"Date": "05/20/2013", "Consumption": 952}, {"Date": "05/24/2013", "Consumption"                                                                                        : 1297}, {"Date": "05/28/2013", "Consumption": 1305}, {"Date": "06/01/2013", "Co                                                                                        nsumption": 1031}, {"Date": "06/05/2013", "Consumption": 1277}, {"Date": "06/09/                                                                                        2013", "Consumption": 971}, {"Date": "06/13/2013", "Consumption": 1289}, {"Date"                                                                                        : "06/17/2013", "Consumption": 1296}, {"Date": "06/21/2013", "Consumption": 1241                                                                                        }, {"Date": "06/25/2013", "Consumption": 1255}, {"Date": "06/29/2013", "Consumpt                                                                                        ion": 1037}, {"Date": "07/03/2013", "Consumption": 1292}, {"Date": "07/07/2013",                                                                                         "Consumption": 969}, {"Date": "07/11/2013", "Consumption": 1273}, {"Date": "07/                                                                                        15/2013", "Consumption": 1248}, {"Date": "07/19/2013", "Consumption": 1252}, {"D                                                                                        ate": "07/23/2013", "Consumption": 1292}, {"Date": "07/27/2013", "Consumption":                                                                                         1088}, {"Date": "07/31/2013", "Consumption": 1240}, {"Date": "08/04/2013", "Cons                                                                                        umption": 1013}, {"Date": "08/08/2013", "Consumption": 1291}, {"Date": "08/12/20                                                                                        13", "Consumption": 1264}, {"Date": "08/16/2013", "Consumption": 1235}, {"Date":                                                                                         "08/20/2013", "Consumption": 1262}, {"Date": "08/24/2013", "Consumption": 1089}                                                                                        , {"Date": "08/28/2013", "Consumption": 1295}, {"Date": "09/01/2013", "Consumpti                                                                                        on": 1018}, {"Date": "09/05/2013", "Consumption": 1352}, {"Date": "09/09/2013",                                                                                         "Consumption": 1315}, {"Date": "09/13/2013", "Consumption": 1321}, {"Date": "09/                                                                                        17/2013", "Consumption": 1376}, {"Date": "09/21/2013", "Consumption": 1109}, {"D                                                                                        ate": "09/25/2013", "Consumption": 1345}, {"Date": "09/29/2013", "Consumption":                                                                                         1058}, {"Date": "10/03/2013", "Consumption": 1114}, {"Date": "10/07/2013", "Cons                                                                                        umption": 1332}, {"Date": "10/11/2013", "Consumption": 1390}, {"Date": "10/15/20                                                                                        13", "Consumption": 1388}, {"Date": "10/19/2013", "Consumption": 1161}, {"Date":                                                                                         "10/23/2013", "Consumption": 1425}, {"Date": "10/27/2013", "Consumption": 1121}                                                                                        , {"Date": "10/31/2013", "Consumption": 1352}, {"Date": "11/04/2013", "Consumpti                                                                                        on": 1432}, {"Date": "11/08/2013", "Consumption": 1402}, {"Date": "11/12/2013",                                                                                         "Consumption": 1439}, {"Date": "11/16/2013", "Consumption": 1219}, {"Date": "11/                                                                                        20/2013", "Consumption": 1440}, {"Date": "11/24/2013", "Consumption": 1137}, {"D                                                                                        ate": "11/28/2013", "Consumption": 1508}, {"Date": "12/02/2013", "Consumption":                                                                                         1434}, {"Date": "12/06/2013", "Consumption": 1545}, {"Date": "12/10/2013", "Cons                                                                                        umption": 1474}, {"Date": "12/14/2013", "Consumption": 1276}, {"Date": "12/18/20                                                                                        13", "Consumption": 1447}, {"Date": "12/22/2013", "Consumption": 1141}, {"Date":                                                                                         "12/26/2013", "Consumption": 989}, {"Date": "12/30/2013", "Consumption": 1149},                                                                                         {"Date": "01/03/2014", "Consumption": 1379}, {"Date": "01/07/2014", "Consumptio                                                                                        n": 1529}, {"Date": "01/11/2014", "Consumption": 1350}, {"Date": "01/15/2014", "                                                                                        Consumption": 1592}, {"Date": "01/19/2014", "Consumption": 1255}, {"Date": "01/2                                                                                        3/2014", "Consumption": 1631}, {"Date": "01/27/2014", "Consumption": 1612}, {"Da                                                                                        te": "01/31/2014", "Consumption": 1605}, {"Date": "02/04/2014", "Consumption": 1                                                                                        617}, {"Date": "02/08/2014", "Consumption": 1365}, {"Date": "02/12/2014", "Consu                                                                                        mption": 1597}, {"Date": "02/16/2014", "Consumption": 1237}, {"Date": "02/20/201                                                                                        4", "Consumption": 1564}, {"Date": "02/24/2014", "Consumption": 1521}, {"Date":                                                                                         "02/28/2014", "Consumption": 1524}, {"Date": "03/04/2014", "Consumption": 1521},                                                                                         {"Date": "03/08/2014", "Consumption": 1279}, {"Date": "03/12/2014", "Consumptio                                                                                        n": 1516}, {"Date": "03/16/2014", "Consumption": 1199}, {"Date": "03/20/2014", "                                                                                        Consumption": 1498}, {"Date": "03/24/2014", "Consumption": 1499}, {"Date": "03/2                                                                                        8/2014", "Consumption": 1470}, {"Date": "04/01/2014", "Consumption": 1478}, {"Da                                                                                        te": "04/05/2014", "Consumption": 1237}, {"Date": "04/09/2014", "Consumption": 1                                                                                        497}, {"Date": "04/13/2014", "Consumption": 1129}, {"Date": "04/17/2014", "Consu                                                                                        mption": 1452}, {"Date": "04/21/2014", "Consumption": 1059}, {"Date": "04/25/201                                                                                        4", "Consumption": 1426}, {"Date": "04/29/2014", "Consumption": 1468}, {"Date":                                                                                         "05/03/2014", "Consumption": 1196}, {"Date": "05/07/2014", "Consumption": 1464},                                                                                         {"Date": "05/11/2014", "Consumption": 1122}, {"Date": "05/15/2014", "Consumptio                                                                                        n": 1468}, {"Date": "05/19/2014", "Consumption": 1421}, {"Date": "05/23/2014", "                                                                                        Consumption": 1429}, {"Date": "05/27/2014", "Consumption": 1464}, {"Date": "05/3                                                                                        1/2014", "Consumption": 1147}, {"Date": "06/04/2014", "Consumption": 1444}, {"Da                                                                                        te": "06/08/2014", "Consumption": 1029}, {"Date": "06/12/2014", "Consumption": 1                                                                                        433}, {"Date": "06/16/2014", "Consumption": 1372}, {"Date": "06/20/2014", "Consu                                                                                        mption": 1310}, {"Date": "06/24/2014", "Consumption": 1434}, {"Date": "06/28/201                                                                                        4", "Consumption": 1192}, {"Date": "07/02/2014", "Consumption": 1418}, {"Date":                                                                                         "07/06/2014", "Consumption": 1096}, {"Date": "07/10/2014", "Consumption": 1430},                                                                                         {"Date": "07/14/2014", "Consumption": 1386}, {"Date": "07/18/2014", "Consumptio                                                                                        n": 1419}, {"Date": "07/22/2014", "Consumption": 1440}, {"Date": "07/26/2014", "                                                                                        Consumption": 1184}, {"Date": "07/30/2014", "Consumption": 1421}, {"Date": "08/0                                                                                        3/2014", "Consumption": 1052}, {"Date": "08/07/2014", "Consumption": 1352}, {"Da                                                                                        te": "08/11/2014", "Consumption": 1329}, {"Date": "08/15/2014", "Consumption": 1                                                                                        287}, {"Date": "08/19/2014", "Consumption": 1365}, {"Date": "08/23/2014", "Consu                                                                                        mption": 1145}, {"Date": "08/27/2014", "Consumption": 1399}, {"Date": "08/31/201                                                                                        4", "Consumption": 1079}, {"Date": "09/04/2014", "Consumption": 1419}, {"Date":                                                                                         "09/08/2014", "Consumption": 1397}, {"Date": "09/12/2014", "Consumption": 1423},                                                                                         {"Date": "09/16/2014", "Consumption": 1432}, {"Date": "09/20/2014", "Consumptio                                                                                        n": 1190}, {"Date": "09/24/2014", "Consumption": 1441}, {"Date": "09/28/2014", "                                                                                        Consumption": 1094}, {"Date": "10/02/2014", "Consumption": 1415}, {"Date": "10/0                                                                                        6/2014", "Consumption": 1433}, {"Date": "10/10/2014", "Consumption": 1438}, {"Da                                                                                        te": "10/14/2014", "Consumption": 1462}, {"Date": "10/18/2014", "Consumption": 1                                                                                        213}, {"Date": "10/22/2014", "Consumption": 1524}, {"Date": "10/26/2014", "Consu                                                                                        mption": 1146}, {"Date": "10/30/2014", "Consumption": 1498}, {"Date": "11/03/201                                                                                        4", "Consumption": 1474}, {"Date": "11/07/2014", "Consumption": 1500}, {"Date":                                                                                         "11/11/2014", "Consumption": 1535}, {"Date": "11/15/2014", "Consumption": 1293},                                                                                         {"Date": "11/19/2014", "Consumption": 1535}, {"Date": "11/23/2014", "Consumptio                                                                                        n": 1192}, {"Date": "11/27/2014", "Consumption": 1578}, {"Date": "12/01/2014", "                                                                                        Consumption": 1607}, {"Date": "12/05/2014", "Consumption": 1604}, {"Date": "12/0                                                                                        9/2014", "Consumption": 1632}, {"Date": "12/13/2014", "Consumption": 1342}, {"Da                                                                                        te": "12/17/2014", "Consumption": 1564}, {"Date": "12/21/2014", "Consumption": 1                                                                                        195}, {"Date": "12/25/2014", "Consumption": 1089}, {"Date": "12/29/2014", "Consu                                                                                        mption": 1316}, {"Date": "01/02/2015", "Consumption": 1300}, {"Date": "01/06/201                                                                                        5", "Consumption": 1452}, {"Date": "01/10/2015", "Consumption": 1331}, {"Date":                                                                                         "01/14/2015", "Consumption": 1593}, {"Date": "01/18/2015", "Consumption": 1267},                                                                                         {"Date": "01/22/2015", "Consumption": 1636}, {"Date": "01/26/2015", "Consumptio                                                                                        n": 1611}, {"Date": "01/30/2015", "Consumption": 1587}, {"Date": "02/03/2015", "                                                                                        Consumption": 1639}, {"Date": "02/07/2015", "Consumption": 1408}, {"Date": "02/1                                                                                        1/2015", "Consumption": 1623}, {"Date": "02/15/2015", "Consumption": 1261}, {"Da                                                                                        te": "02/19/2015", "Consumption": 1607}, {"Date": "02/23/2015", "Consumption": 1                                                                                        592}, {"Date": "02/27/2015", "Consumption": 1569}, {"Date": "03/03/2015", "Consu                                                                                        mption": 1570}, {"Date": "03/07/2015", "Consumption": 1317}, {"Date": "03/11/201                                                                                        5", "Consumption": 1530}, {"Date": "03/15/2015", "Consumption": 1212}, {"Date":                                                                                         "03/19/2015", "Consumption": 1508}, {"Date": "03/23/2015", "Consumption": 1500},                                                                                         {"Date": "03/27/2015", "Consumption": 1499}, {"Date": "03/31/2015", "Consumptio                                                                                        n": 1517}, {"Date": "04/04/2015", "Consumption": 1193}, {"Date": "04/08/2015", "                                                                                        Consumption": 1476}, {"Date": "04/12/2015", "Consumption": 1122}, {"Date": "04/1                                                                                        6/2015", "Consumption": 1447}, {"Date": "04/20/2015", "Consumption": 1410}, {"Da                                                                                        te": "04/24/2015", "Consumption": 1398}, {"Date": "04/28/2015", "Consumption": 1                                                                                        467}, {"Date": "05/02/2015", "Consumption": 1125}, {"Date": "05/06/2015", "Consu                                                                                        mption": 1434}, {"Date": "05/10/2015", "Consumption": 1088}, {"Date": "05/14/201                                                                                        5", "Consumption": 1098}, {"Date": "05/18/2015", "Consumption": 1396}, {"Date":                                                                                         "05/22/2015", "Consumption": 1393}, {"Date": "05/26/2015", "Consumption": 1388},                                                                                         {"Date": "05/30/2015", "Consumption": 1182}, {"Date": "06/03/2015", "Consumptio                                                                                        n": 1412}, {"Date": "06/07/2015", "Consumption": 1070}, {"Date": "06/11/2015", "                                                                                        Consumption": 1420}, {"Date": "06/15/2015", "Consumption": 1393}, {"Date": "06/1                                                                                        9/2015", "Consumption": 1395}, {"Date": "06/23/2015", "Consumption": 1431}, {"Da                                                                                        te": "06/27/2015", "Consumption": 1175}, {"Date": "07/01/2015", "Consumption": 1                                                                                        444}, {"Date": "07/05/2015", "Consumption": 1121}, {"Date": "07/09/2015", "Consu                                                                                        mption": 1415}, {"Date": "07/13/2015", "Consumption": 1401}, {"Date": "07/17/201                                                                                        5", "Consumption": 1425}, {"Date": "07/21/2015", "Consumption": 1449}, {"Date":                                                                                         "07/25/2015", "Consumption": 1176}, {"Date": "07/29/2015", "Consumption": 1374},                                                                                         {"Date": "08/02/2015", "Consumption": 1038}, {"Date": "08/06/2015", "Consumptio                                                                                        n": 1389}, {"Date": "08/10/2015", "Consumption": 1364}, {"Date": "08/14/2015", "                                                                                        Consumption": 1365}, {"Date": "08/18/2015", "Consumption": 1374}, {"Date": "08/2                                                                                        2/2015", "Consumption": 1144}, {"Date": "08/26/2015", "Consumption": 1411}, {"Da                                                                                        te": "08/30/2015", "Consumption": 1085}, {"Date": "09/03/2015", "Consumption": 1                                                                                        424}, {"Date": "09/07/2015", "Consumption": 1409}, {"Date": "09/11/2015", "Consu                                                                                        mption": 1407}, {"Date": "09/15/2015", "Consumption": 1458}, {"Date": "09/19/201                                                                                        5", "Consumption": 1194}, {"Date": "09/23/2015", "Consumption": 1466}, {"Date":                                                                                         "09/27/2015", "Consumption": 1121}, {"Date": "10/01/2015", "Consumption": 1425},                                                                                         {"Date": "10/05/2015", "Consumption": 1411}, {"Date": "10/09/2015", "Consumptio                                                                                        n": 1434}, {"Date": "10/13/2015", "Consumption": 1511}, {"Date": "10/17/2015", "                                                                                        Consumption": 1271}, {"Date": "10/21/2015", "Consumption": 1511}, {"Date": "10/2                                                                                        5/2015", "Consumption": 1166}, {"Date": "10/29/2015", "Consumption": 1505}, {"Da                                                                                        te": "11/02/2015", "Consumption": 1487}, {"Date": "11/06/2015", "Consumption": 1                                                                                        479}, {"Date": "11/10/2015", "Consumption": 1533}, {"Date": "11/14/2015", "Consu                                                                                        mption": 1298}, {"Date": "11/18/2015", "Consumption": 1533}, {"Date": "11/22/201                                                                                        5", "Consumption": 1241}, {"Date": "11/26/2015", "Consumption": 1596}, {"Date":                                                                                         "11/30/2015", "Consumption": 1571}, {"Date": "12/04/2015", "Consumption": 1570},                                                                                         {"Date": "12/08/2015", "Consumption": 1572}, {"Date": "12/12/2015", "Consumptio                                                                                        n": 1334}, {"Date": "12/16/2015", "Consumption": 1562}, {"Date": "12/20/2015", "                                                                                        Consumption": 1165}, {"Date": "12/24/2015", "Consumption": 1121}, {"Date": "12/2                                                                                        8/2015", "Consumption": 1219}, {"Date": "01/01/2016", "Consumption": 1060}, {"Da                                                                                        te": "01/05/2016", "Consumption": 1506}, {"Date": "01/09/2016", "Consumption": 1                                                                                        311}, {"Date": "01/13/2016", "Consumption": 1595}, {"Date": "01/17/2016", "Consu                                                                                        mption": 1288}, {"Date": "01/21/2016", "Consumption": 1657}, {"Date": "01/25/201                                                                                        6", "Consumption": 1556}, {"Date": "01/29/2016", "Consumption": 1545}, {"Date":                                                                                         "02/02/2016", "Consumption": 1565}, {"Date": "02/06/2016", "Consumption": 1293},                                                                                         {"Date": "02/10/2016", "Consumption": 1578}, {"Date": "02/14/2016", "Consumptio                                                                                        n": 1228}, {"Date": "02/18/2016", "Consumption": 1584}, {"Date": "02/22/2016", "                                                                                        Consumption": 1534}, {"Date": "02/26/2016", "Consumption": 1543}, {"Date": "03/0                                                                                        1/2016", "Consumption": 1581}, {"Date": "03/05/2016", "Consumption": 1317}, {"Da                                                                                        te": "03/09/2016", "Consumption": 1563}, {"Date": "03/13/2016", "Consumption": 1                                                                                        217}, {"Date": "03/17/2016", "Consumption": 1530}, {"Date": "03/21/2016", "Consu                                                                                        mption": 1518}, {"Date": "03/25/2016", "Consumption": 1200}, {"Date": "03/29/201                                                                                        6", "Consumption": 1442}, {"Date": "04/02/2016", "Consumption": 1218}, {"Date":                                                                                         "04/06/2016", "Consumption": 1466}, {"Date": "04/10/2016", "Consumption": 1106},                                                                                         {"Date": "04/14/2016", "Consumption": 1447}, {"Date": "04/18/2016", "Consumptio                                                                                        n": 1428}, {"Date": "04/22/2016", "Consumption": 1410}, {"Date": "04/26/2016", "                                                                                        Consumption": 1493}, {"Date": "04/30/2016", "Consumption": 1205}, {"Date": "05/0                                                                                        4/2016", "Consumption": 1430}, {"Date": "05/08/2016", "Consumption": 1072}, {"Da                                                                                        te": "05/12/2016", "Consumption": 1444}, {"Date": "05/16/2016", "Consumption": 1                                                                                        080}, {"Date": "05/20/2016", "Consumption": 1415}, {"Date": "05/24/2016", "Consu                                                                                        mption": 1454}, {"Date": "05/28/2016", "Consumption": 1169}, {"Date": "06/01/201                                                                                        6", "Consumption": 1431}, {"Date": "06/05/2016", "Consumption": 1076}, {"Date":                                                                                         "06/09/2016", "Consumption": 1405}, {"Date": "06/13/2016", "Consumption": 1390},                                                                                         {"Date": "06/17/2016", "Consumption": 1382}, {"Date": "06/21/2016", "Consumptio                                                                                        n": 1408}, {"Date": "06/25/2016", "Consumption": 1195}, {"Date": "06/29/2016", "                                                                                        Consumption": 1422}, {"Date": "07/03/2016", "Consumption": 1064}, {"Date": "07/0                                                                                        7/2016", "Consumption": 1400}, {"Date": "07/11/2016", "Consumption": 1408}, {"Da                                                                                        te": "07/15/2016", "Consumption": 1362}, {"Date": "07/19/2016", "Consumption": 1                                                                                        399}, {"Date": "07/23/2016", "Consumption": 1167}, {"Date": "07/27/2016", "Consu                                                                                        mption": 1396}, {"Date": "07/31/2016", "Consumption": 1054}, {"Date": "08/04/201                                                                                        6", "Consumption": 1376}, {"Date": "08/08/2016", "Consumption": 1339}, {"Date":                                                                                         "08/12/2016", "Consumption": 1332}, {"Date": "08/16/2016", "Consumption": 1346},                                                                                         {"Date": "08/20/2016", "Consumption": 1143}, {"Date": "08/24/2016", "Consumptio                                                                                        n": 1405}, {"Date": "08/28/2016", "Consumption": 1095}, {"Date": "09/01/2016", "                                                                                        Consumption": 1407}, {"Date": "09/05/2016", "Consumption": 1384}, {"Date": "09/0                                                                                        9/2016", "Consumption": 1392}, {"Date": "09/13/2016", "Consumption": 1446}, {"Da                                                                                        te": "09/17/2016", "Consumption": 1179}, {"Date": "09/21/2016", "Consumption": 1                                                                                        407}, {"Date": "09/25/2016", "Consumption": 1074}, {"Date": "09/29/2016", "Consu                                                                                        mption": 1436}, {"Date": "10/03/2016", "Consumption": 1105}, {"Date": "10/07/201                                                                                        6", "Consumption": 1452}, {"Date": "10/11/2016", "Consumption": 1494}, {"Date":                                                                                         "10/15/2016", "Consumption": 1243}, {"Date": "10/19/2016", "Consumption": 1503},                                                                                         {"Date": "10/23/2016", "Consumption": 1154}, {"Date": "10/27/2016", "Consumptio                                                                                        n": 1495}, {"Date": "10/31/2016", "Consumption": 1331}, {"Date": "11/04/2016", "                                                                                        Consumption": 1509}, {"Date": "11/08/2016", "Consumption": 1571}, {"Date": "11/1                                                                                        2/2016", "Consumption": 1343}, {"Date": "11/16/2016", "Consumption": 1574}, {"Da                                                                                        te": "11/20/2016", "Consumption": 1233}, {"Date": "11/24/2016", "Consumption": 1                                                                                        565}, {"Date": "11/28/2016", "Consumption": 1573}, {"Date": "12/02/2016", "Consu                                                                                        mption": 1585}, {"Date": "12/06/2016", "Consumption": 1650}, {"Date": "12/10/201                                                                                        6", "Consumption": 1345}, {"Date": "12/14/2016", "Consumption": 1595}, {"Date":                                                                                         "12/18/2016", "Consumption": 1266}, {"Date": "12/22/2016", "Consumption": 1512},                                                                                         {"Date": "12/26/2016", "Consumption": 1121}, {"Date": "12/30/2016", "Consumptio                                                                                        n": 1291}, {"Date": "01/03/2017", "Consumption": 1529}, {"Date": "01/07/2017", "                                                                                        Consumption": 1405}, {"Date": "01/11/2017", "Consumption": 1654}, {"Date": "01/1                                                                                        5/2017", "Consumption": 1289}, {"Date": "01/19/2017", "Consumption": 1667}, {"Da                                                                                        te": "01/23/2017", "Consumption": 1663}, {"Date": "01/27/2017", "Consumption": 1                                                                                        629}, {"Date": "01/31/2017", "Consumption": 1620}, {"Date": "02/04/2017", "Consu                                                                                        mption": 1344}, {"Date": "02/08/2017", "Consumption": 1625}, {"Date": "02/12/201                                                                                        7", "Consumption": 1293}, {"Date": "02/16/2017", "Consumption": 1576}, {"Date":                                                                                         "02/20/2017", "Consumption": 1563}, {"Date": "02/24/2017", "Consumption": 1539},                                                                                         {"Date": "02/28/2017", "Consumption": 1532}, {"Date": "03/04/2017", "Consumptio                                                                                        n": 1265}, {"Date": "03/08/2017", "Consumption": 1565}, {"Date": "03/12/2017", "                                                                                        Consumption": 1170}, {"Date": "03/16/2017", "Consumption": 1485}, {"Date": "03/2                                                                                        0/2017", "Consumption": 1476}, {"Date": "03/24/2017", "Consumption": 1467}, {"Da                                                                                        te": "03/28/2017", "Consumption": 1445}, {"Date": "04/01/2017", "Consumption": 1                                                                                        186}, {"Date": "04/05/2017", "Consumption": 1456}, {"Date": "04/09/2017", "Consu                                                                                        mption": 1106}, {"Date": "04/13/2017", "Consumption": 1420}, {"Date": "04/17/201                                                                                        7", "Consumption": 1086}, {"Date": "04/21/2017", "Consumption": 1458}, {"Date":                                                                                         "04/25/2017", "Consumption": 1482}, {"Date": "04/29/2017", "Consumption": 1209},                                                                                         {"Date": "05/03/2017", "Consumption": 1471}, {"Date": "05/07/2017", "Consumptio                                                                                        n": 1113}, {"Date": "05/11/2017", "Consumption": 1419}, {"Date": "05/15/2017", "                                                                                        Consumption": 1387}, {"Date": "05/19/2017", "Consumption": 1416}, {"Date": "05/2                                                                                        3/2017", "Consumption": 1419}, {"Date": "05/27/2017", "Consumption": 1140}, {"Da                                                                                        te": "05/31/2017", "Consumption": 1437}, {"Date": "06/04/2017", "Consumption": 1                                                                                        016}, {"Date": "06/08/2017", "Consumption": 1388}, {"Date": "06/12/2017", "Consu                                                                                        mption": 1393}, {"Date": "06/16/2017", "Consumption": 1302}, {"Date": "06/20/201                                                                                        7", "Consumption": 1440}, {"Date": "06/24/2017", "Consumption": 1184}, {"Date":                                                                                         "06/28/2017", "Consumption": 1431}, {"Date": "07/02/2017", "Consumption": 1074},                                                                                         {"Date": "07/06/2017", "Consumption": 1408}, {"Date": "07/10/2017", "Consumptio                                                                                        n": 1387}, {"Date": "07/14/2017", "Consumption": 1343}, {"Date": "07/18/2017", "                                                                                        Consumption": 1380}, {"Date": "07/22/2017", "Consumption": 1151}, {"Date": "07/2                                                                                        6/2017", "Consumption": 1365}, {"Date": "07/30/2017", "Consumption": 1061}, {"Da                                                                                        te": "08/03/2017", "Consumption": 1389}, {"Date": "08/07/2017", "Consumption": 1                                                                                        302}, {"Date": "08/11/2017", "Consumption": 1329}, {"Date": "08/15/2017", "Consu                                                                                        mption": 1333}, {"Date": "08/19/2017", "Consumption": 1130}, {"Date": "08/23/201                                                                                        7", "Consumption": 1365}, {"Date": "08/27/2017", "Consumption": 1066}, {"Date":                                                                                         "08/31/2017", "Consumption": 1417}, {"Date": "09/04/2017", "Consumption": 1359},                                                                                         {"Date": "09/08/2017", "Consumption": 1407}, {"Date": "09/12/2017", "Consumptio                                                                                        n": 1428}, {"Date": "09/16/2017", "Consumption": 1181}, {"Date": "09/20/2017", "                                                                                        Consumption": 1442}, {"Date": "09/24/2017", "Consumption": 1115}, {"Date": "09/2                                                                                        8/2017", "Consumption": 1446}, {"Date": "10/02/2017", "Consumption": 1327}, {"Da                                                                                        te": "10/06/2017", "Consumption": 1463}, {"Date": "10/10/2017", "Consumption": 1                                                                                        489}, {"Date": "10/14/2017", "Consumption": 1234}, {"Date": "10/18/2017", "Consu                                                                                        mption": 1460}, {"Date": "10/22/2017", "Consumption": 1164}, {"Date": "10/26/201                                                                                        7", "Consumption": 1493}, {"Date": "10/30/2017", "Consumption": 1345}, {"Date":                                                                                         "11/03/2017", "Consumption": 1471}, {"Date": "11/07/2017", "Consumption": 1545},                                                                                         {"Date": "11/11/2017", "Consumption": 1346}, {"Date": "11/15/2017", "Consumptio                                                                                        n": 1562}, {"Date": "11/19/2017", "Consumption": 1268}, {"Date": "11/23/2017", "                                                                                        Consumption": 1581}, {"Date": "11/27/2017", "Consumption": 1602}, {"Date": "12/0                                                                                        1/2017", "Consumption": 1592}, {"Date": "12/05/2017", "Consumption": 1643}, {"Da                                                                                        te": "12/09/2017", "Consumption": 1415}, {"Date": "12/13/2017", "Consumption": 1                                                                                        651}, {"Date": "12/17/2017", "Consumption": 1297}, {"Date": "12/21/2017", "Consu                                                                                        mption": 1520}, {"Date": "12/25/2017", "Consumption": 1111}, {"Date": "12/29/201                                                                                        7", "Consumption": 1295}, {"Date": "11_11_1111", "Consumption": "1000000"}, {"Da                                                                                        te": "11_11_1111", "Consumption": "0"}, {"Date": "11_11_1111", "Consumption": "1                                                                                        0000000"}, {"Date": "22_22_2222", "Consumption": "0"}]}
+"6	CHAR	0
+	
+	with
+"7	CHAR	0
+	#include<iostream>
+	
+	using std::cin;
+	using std::cout;
+	using std::endl;
+	
+	class Person{
+		private:int status; int stable; int i;
+		public:
+		Person(){status = 0;stable = 0;i = -1;}
+	
+		int status_string(){
+		if (status == 0)
+	 	  cout<<"Joe is susceptible"<<endl;
+		else if (status == 1)
+		  cout<<"Joe is sick ("<<i<< " to go)"<<endl;
+		else if (status == 2)
+		  cout<<"Joe is recovered"<<endl;
+		};
+	
+		void update(){
+	        if (i>0)
+		 {
+		  i--;
+		 }
+	        if (i == 0 && status == 1)
+		 {
+	          stable = 1;
+		  status = 2;
+	 	 }
+		};
+	
+		void infect(int n){
+		  if (stable == 0)
+		   {
+		    status = 1;
+		    i = n;
+		   }
+		};
+	
+		void is_stable(){
+		if (stable == 1)
+		  cout<<"Joe has been sick and is stable"<<endl;
+		else 
+		  cout<<"Joe has not been sick yet"<<endl;
+		};
+		
+		double get_stable() {return stable;};
+	};
+	
+"8	CHAR	0
+	#include<iostream>
+	
+	using std::cin;
+	using std::cout;
+	using std::endl;
+	
+	class Person{
+		private:int status; int stable; int i;
+		public:
+		Person(){status = 0;stable = 0;i = -1;}
+	
+		int status_string(){
+		if (status == 0)
+	 	  cout<<"Joe is susceptible"<<endl;
+		else if (status == 1)
+		  cout<<"Joe is sick ("<<i<< " to go)"<<endl;
+		else if (status == 2)
+		  cout<<"Joe is recovered"<<endl;
+		};
+	
+		void update(){
+	        if (i>0)
+		 {
+		  i--;
+		 }
+	        if (i == 0 && status == 1)
+		 {
+	          stable = 1;
+		  status = 2;
+	 	 }
+		};
+	
+		void infect(int n){
+		  if (stable == 0)
+		   {
+		    status = 1;
+		    i = n;
+		   }
+		};
+	
+		void is_stable(){
+		if (stable == 1)
+		  cout<<"Joe has been sick and is stable"<<endl;
+		else 
+		  cout<<"Joe has not been sick yet"<<endl;
+		};
+		
+		double get_stable() {return stable;};
+	};
+	
+"9	CHAR	0
+	#include<iostream>
+	
+	using std::cin;
+	using std::cout;
+	using std::endl;
+	
+	class Person{
+		private:int status; int stable; int i;
+		public:
+		Person(){status = 0;stable = 0;i = -1;}
+	
+		int status_string(){
+		if (status == 0)
+	 	  cout<<"Joe is susceptible"<<endl;
+		else if (status == 1)
+		  cout<<"Joe is sick ("<<i<< " to go)"<<endl;
+		else if (status == 2)
+		  cout<<"Joe is recovered"<<endl;
+		};
+	
+		void update(){
+	        if (i>0)
+		 {
+		  i--;
+		 }
+	        if (i == 0 && status == 1)
+		 {
+	          stable = 1;
+		  status = 2;
+	 	 }
+		};
+	
+		void infect(int n){
+		  if (stable == 0)
+		   {
+		    status = 1;
+		    i = n;
+		   }
+		};
+	
+		void is_stable(){
+		if (stable == 1)
+		  cout<<"Joe has been sick and is stable"<<endl;
+		else 
+		  cout<<"Joe has not been sick yet"<<endl;
+		};
+		
+		double get_stable() {return stable;};
+	};
+	
+"u	CHAR	0
+	ests.post("http://localhost:4222/data.txt/animals", data=new_animal)r = re
+""-	CHAR	0
+	(
 
 # File marks:
-'0  194  0  ~/project/stevend-COE322-finalproject.cpp
-'1  169  1  ~/project/p.cpp
-'2  194  1  ~/project/p.cpp
-'3  17  1  ~/project/p.cpp
-'4  30  43  ~/project/fort/p.f90
-'5  27  72  ~/project/fort/p.f90
-'6  26  19  ~/project/fort/part2.f90
-'7  30  7  ~/project/fort/part2.f90
-'8  24  34  ~/project/fort/part2.f90
-'9  11  20  ~/project/fort/part2.f90
+'0  5  38  ~/COE332_review/lectures/week6/Dockerfile
+'1  107  68  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+'2  51  41  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+'3  69  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+'4  60  39  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+'5  63  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+'6  105  25  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+'7  106  75  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+'8  102  43  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+'9  99  42  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
 
 # Jumplist (newest first):
--'  194  0  ~/project/stevend-COE322-finalproject.cpp
--'  1  0  ~/project/stevend-COE322-finalproject.cpp
--'  169  1  ~/project/p.cpp
--'  194  1  ~/project/p.cpp
--'  17  1  ~/project/p.cpp
--'  30  43  ~/project/fort/p.f90
--'  27  72  ~/project/fort/p.f90
--'  26  19  ~/project/fort/part2.f90
--'  30  7  ~/project/fort/part2.f90
--'  24  8  ~/project/fort/part2.f90
--'  11  8  ~/project/fort/part2.f90
--'  1  8  ~/project/fort/part2.f90
--'  26  8  ~/project/fort/p.f90
--'  1  0  ~/project/fort/part2.cpp
--'  31  7  ~/project/fort/p.f90
--'  24  24  ~/project/fort/p.f90
--'  22  8  ~/project/fort/p.f90
--'  16  14  ~/project/fort/p.f90
--'  4  2  ~/project/fort/part1.f90
--'  73  2  ~/project/fort/part1.f90
--'  6  8  ~/project/fort/part1.f90
--'  13  12  ~/project/fort/part1.f90
--'  4  8  ~/project/fort/p.f90
--'  32  11  ~/project/fort/p.f90
--'  15  12  ~/project/fort/p.f90
--'  17  14  ~/project/fort/p.f90
--'  1  8  ~/project/fort/part1.f90
--'  9  8  ~/project/fort/test.f90
--'  1  0  ~/project/fort/test.f90
--'  11  8  ~/project/fort/p.f90
--'  10  8  ~/project/fort/p.f90
--'  3  8  ~/project/fort/p.f90
--'  12  10  ~/project/fort/p.f90
--'  13  10  ~/project/fort/p.f90
--'  11  8  ~/project/fort/hw4.f90
--'  1  8  ~/project/fort/hw4.f90
--'  59  12  ~/project/fort/p.f90
--'  77  4  ~/project/fort/p.f90
--'  65  9  ~/project/fort/p.f90
--'  56  2  ~/project/fort/hw7.f90
--'  1  8  ~/project/fort/hw7.f90
--'  57  2  ~/hw/stevend-COE322-HW7.f90
--'  1  8  ~/hw/stevend-COE322-HW7.f90
--'  78  9  ~/project/fort/p.f90
--'  1  8  ~/project/fort/p.f90
--'  5  8  ~/hw/test.f90
--'  1  8  ~/project/p.f90
--'  24  9  ~/hw/p.f90
--'  39  9  ~/hw/p.f90
--'  138  0  ~/project/p.cpp
--'  204  1  ~/project/p.cpp
--'  125  3  ~/project/p.cpp
--'  146  3  ~/project/part3.cpp
--'  196  0  ~/project/part3.cpp
--'  128  5  ~/project/part3.cpp
--'  106  1  ~/project/part2.cpp
--'  164  3  ~/project/p.cpp
--'  234  1  ~/project/p.cpp
--'  211  1  ~/project/p.cpp
--'  245  0  ~/project/p.cpp
--'  103  5  ~/project/p.cpp
--'  14  1  ~/project/part2.cpp
--'  122  3  ~/project/part2.cpp
--'  12  4  ~/project/part1.cpp
--'  20  5  ~/project/part1.cpp
--'  9  1  ~/project/part1.cpp
--'  230  3  ~/project/p.cpp
--'  188  11  ~/project/p.cpp
--'  213  1  ~/project/p.cpp
--'  172  2  ~/project/p.cpp
--'  227  5  ~/project/p.cpp
--'  182  2  ~/project/p.cpp
--'  15  2  ~/project/test4.cpp
--'  16  2  ~/project/test4.cpp
--'  171  7  ~/project/p.cpp
--'  129  0  ~/project/test3.cpp
--'  179  0  ~/project/test3.cpp
--'  11  0  ~/project/test.cpp
--'  1  0  ~/project/test.cpp
--'  170  7  ~/project/p.cpp
--'  173  9  ~/project/p.cpp
--'  215  0  ~/project/p.cpp
--'  136  3  ~/project/p.cpp
--'  3  0  ~/project/p.cpp
--'  12  2  ~/project/test4.cpp
--'  17  0  ~/project/test4.cpp
--'  9  0  ~/project/test4.cpp
--'  189  4  ~/project/p.cpp
--'  185  4  ~/project/p.cpp
--'  217  1  ~/project/p.cpp
--'  240  0  ~/project/p.cpp
--'  149  1  ~/project/p.cpp
--'  124  1  ~/project/p.cpp
--'  98  5  ~/project/p.cpp
--'  168  0  ~/project/part3.cpp
--'  158  9  ~/project/part3.cpp
--'  161  4  ~/project/part3.cpp
--'  160  9  ~/project/part3.cpp
--'  179  0  ~/project/part3.cpp
+-'  5  38  ~/COE332_review/lectures/week6/Dockerfile
+-'  1  0  ~/COE332_review/lectures/week6/Dockerfile
+-'  107  68  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+-'  105  8  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+-'  51  41  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  69  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  60  2  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  63  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  72  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  106  8  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+-'  102  51  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+-'  99  8  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+-'  84  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+-'  83  1  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+-'  88  1  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+-'  100  8  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+-'  66  4  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  34  0  ~/COE332_review/HW/coe332-f2019-hw2/coe332.json
+-'  9  3  ~/COE332_review/HW/coe332-f2019-hw2/coe332.json
+-'  2  0  ~/COE332_review/HW/coe332-f2019-hw2/app/coe332.json
+-'  1  0  ~/COE332_review/HW/coe332-f2019-hw2/app/coe332.json
+-'  70  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  62  2  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  1  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+-'  61  1  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  11  38  ~/COE332_review/lectures/week5/app.py
+-'  18  1  ~/COE332_review/lectures/week5/app.py
+-'  20  0  ~/COE332_review/lectures/week5/app.py
+-'  22  1  ~/COE332_review/lectures/week5/app.py
+-'  10  26  ~/COE332_review/lectures/week5/app.py
+-'  27  1  ~/COE332_review/lectures/week5/app.py
+-'  10  16  ~/COE332_review/lectures/week5/test.py
+-'  1  0  ~/COE332_review/lectures/week5/test.py
+-'  15  18  ~/COE332_review/lectures/week5/test.py
+-'  29  1  ~/COE332_review/lectures/week5/app.py
+-'  1  0  ~/COE332_review/lectures/week5/app.py
+-'  2  0  ~/COE332_review/lectures/week5/app.py
+-'  17  6  ~/COE332_review/lectures/week5/app.py
+-'  28  0  ~/COE332_review/lectures/week5/app.py
+-'  5  0  ~/COE332_review/lectures/week5/app.py
+-'  12  0  ~/COE332_review/lectures/week4/app.py
+-'  19  0  ~/COE332_review/lectures/week5/app.py
+-'  95  8  ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+-'  50  1  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  1  22  ~/COE332_review/HW/coe332-f2019-hw2/test.py
+-'  48  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  53  2  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  43  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  1  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  39  2  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  41  2  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  29  2  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  33  1  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  25  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  27  129  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  22  2  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  17  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  30  1  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  19  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  16  1  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  9  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+-'  1  0  ~/COE332_review/HW/coe332-f2019-hw2/app/app
+-'  1  0  ~/COE332_review/HW/coe332-f2019-hw2/main.py
+-'  1  0  ~/COE332_review/HW/coe332-f2019-hw2/coe332.json
+-'  5  0  ~/COE332_review/lectures/week4/app.py
+-'  8  0  ~/COE332_review/lectures/week4/app.py
+-'  15  0  ~/COE332_review/lectures/week4/app.py
+-'  1  0  ~/COE332_review/lectures/week4/app.py
+-'  28  38  ~/COE332_review/HW/HW2/hw1/hw2_test.py
+-'  26  24  ~/COE332_review/HW/HW2/hw1/hw2_test.py
+-'  1  0  ~/COE332_review/HW/HW2/hw1/hw2_test.py
+-'  37  30  ~/COE332_review/HW/HW2/hw1/hw2.py
+-'  38  0  ~/COE332_review/HW/HW2/hw1/hw2.py
+-'  1  0  ~/COE332_review/HW/HW2/hw1/hw2.py
+-'  1  0  ~/COE332_review/HW/HW2/hw1/test.py
+-'  63  0  ~/COE332_review/HW/HW2/hw1/hw1_test.py
+-'  1  0  ~/COE332_review/HW/HW2/hw1/hw1_test.py
+-'  3  0  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1.py
+-'  47  2  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1.py
+-'  43  2  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1.py
+-'  62  0  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1_test.py
+-'  11  4  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1.py
+-'  61  5  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1_test.py
+-'  48  4  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1_test.py
+-'  51  2  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1_test.py
+-'  53  3  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1_test.py
+-'  34  1  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1_test.py
+-'  1  0  ~/COE332_review/HW/coe332-f2019-hw1/rainfall.csv
+-'  1  0  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1_test.py
+-'  16  5  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1.py
+-'  13  4  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1.py
+-'  14  5  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1.py
+-'  12  5  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1.py
+-'  1  0  ~/COE332_review/HW/coe332-f2019-hw1/results.txt
+-'  13  1  ~/COE332_review/HW/coe332-f2019-hw1/main.py
+-'  1  0  ~/COE332_review/HW/coe332-f2019-hw1/main.py
+-'  34  3  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1.py
+-'  38  0  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1.py
+-'  26  3  ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1.py
 
 # History of marks within files (newest to oldest):
 
-> ~/project/stevend-COE322-finalproject.cpp
-	"	194	0
+> ~/COE332_review/lectures/week6/Dockerfile
+	"	5	38
+	^	5	39
+	.	5	0
+	+	5	0
 
-> ~/project/p.cpp
-	"	169	1
-	^	204	24
-	.	204	23
-	+	101	64
-	+	90	16
-	+	93	34
-	+	97	39
-	+	101	39
-	+	101	49
-	+	102	0
-	+	97	46
-	+	129	74
-	+	213	24
-	+	215	36
-	+	213	23
-	+	211	19
-	+	213	23
-	+	211	18
-	+	213	24
-	+	163	67
-	+	185	4
-	+	186	5
-	+	186	77
-	+	187	6
-	+	230	38
-	+	213	23
-	+	187	7
-	+	189	25
-	+	213	24
-	+	211	21
-	+	138	0
-	+	141	43
-	+	144	6
-	+	147	4
-	+	149	3
-	+	216	29
-	+	234	29
-	+	217	16
-	+	148	17
-	+	215	37
-	+	216	31
-	+	234	52
-	+	216	28
-	+	215	35
-	+	230	31
-	+	213	1
-	+	215	1
-	+	211	17
-	+	230	30
-	+	211	17
-	+	173	11
-	+	211	17
-	+	230	30
-	+	173	85
-	+	3	14
-	+	230	31
-	+	215	0
-	+	213	22
-	+	129	83
-	+	213	23
-	+	230	31
-	+	213	23
-	+	211	18
-	+	212	1
-	+	213	1
-	+	212	0
-	+	215	1
-	+	230	30
-	+	169	35
-	+	184	0
-	+	188	26
-	+	181	2
-	+	172	17
-	+	180	2
-	+	182	44
-	+	172	5
-	+	211	18
-	+	230	28
-	+	213	0
-	+	215	0
-	+	213	23
-	+	230	31
-	+	16	4
-	+	47	4
-	+	93	4
-	+	211	17
-	+	201	23
-	+	213	35
-	+	230	45
-	+	208	23
-	+	203	19
-	+	214	31
-	+	216	46
-	+	233	32
-	+	234	68
-	+	204	22
-	+	236	84
-	+	208	24
-	+	199	47
-	+	210	43
-	+	219	21
-	+	233	0
-	+	204	23
+> ~/COE332_review/HW/coe332-f2019-hw2/app/app_test.py
+	"	107	68
+	^	107	69
+	.	107	69
+	+	87	33
+	+	86	18
+	+	88	0
+	+	87	37
+	+	88	48
+	+	83	112
+	+	87	25
+	+	88	21
+	+	85	0
+	+	84	0
+	+	83	0
+	+	99	42
+	+	108	0
+	+	106	75
+	+	107	8
+	+	107	69
 
-> ~/project/fort/p.f90
-	"	30	43
-	^	30	44
-	.	30	43
-	+	61	22
-	+	9	16
-	+	10	24
-	+	63	51
-	+	10	29
-	+	11	15
-	+	63	18
-	+	78	22
-	+	77	5
-	+	6	34
-	+	10	28
-	+	11	17
-	+	6	64
-	+	9	8
-	+	4	22
-	+	6	69
-	+	11	22
-	+	32	25
-	+	15	19
-	+	4	39
-	+	15	21
-	+	4	41
-	+	11	11
-	+	4	41
-	+	11	20
-	+	15	21
-	+	13	20
-	+	15	12
-	+	4	49
-	+	11	27
-	+	4	42
-	+	12	18
-	+	15	51
-	+	16	60
-	+	4	43
-	+	14	25
-	+	15	23
-	+	32	11
-	+	11	15
-	+	22	13
-	+	33	0
-	+	20	17
-	+	11	21
-	+	11	0
-	+	4	23
-	+	6	24
-	+	6	59
-	+	4	33
-	+	11	21
-	+	7	34
-	+	16	28
-	+	7	34
-	+	16	14
+> ~/COE332_review/HW/coe332-f2019-hw2/app/app.py
+	"	51	41
+	^	51	42
+	.	51	41
+	+	16	0
+	+	12	0
+	+	16	23
+	+	30	29
+	+	19	19
+	+	30	31
+	+	20	30
+	+	30	19
+	+	29	18
+	+	30	1
+	+	27	148
+	+	27	16
+	+	29	23
+	+	22	0
+	+	22	27
+	+	24	52
+	+	33	35
+	+	28	0
+	+	29	22
+	+	36	23
+	+	35	29
+	+	39	35
+	+	38	46
+	+	39	39
+	+	41	40
+	+	37	14
+	+	39	32
+	+	41	18
+	+	1	47
+	+	42	0
+	+	54	0
+	+	45	35
+	+	53	18
+	+	47	31
+	+	48	9
+	+	50	45
+	+	52	0
+	+	51	14
+	+	62	11
+	+	60	46
+	+	68	17
+	+	64	34
+	+	71	0
+	+	62	12
+	+	60	40
+	+	59	1
+	+	72	0
+	+	59	43
+	+	60	29
+	+	39	41
+	+	60	39
+	+	51	41
+
+> ~/COE332_review/HW/coe332-f2019-hw2/coe332.json
+	"	34	0
+
+> ~/COE332_review/HW/coe332-f2019-hw2/app/coe332.json
+	"	2	0
+
+> ~/COE332_review/lectures/week5/app.py
+	"	11	38
+	^	11	39
+	.	11	38
+	+	29	34
+	+	10	21
 	+	17	0
-	+	16	99
-	+	16	113
-	+	16	73
-	+	16	100
-	+	16	50
-	+	31	30
-	+	17	0
-	+	31	68
-	+	31	16
-	+	5	26
-	+	31	37
-	+	31	67
-	+	32	0
-	+	31	69
-	+	7	0
-	+	6	25
-	+	4	34
-	+	31	34
-	+	24	47
-	+	4	45
-	+	24	51
-	+	24	48
-	+	24	15
-	+	24	31
-	+	24	67
-	+	24	87
-	+	24	63
-	+	31	70
-	+	24	58
-	+	24	37
-	+	31	25
-	+	24	38
-	+	24	57
-	+	24	31
-	+	24	60
-	+	32	0
-	+	24	49
-	+	27	71
-	+	27	71
-	+	26	17
-	+	31	0
-	+	27	72
-	+	27	96
-	+	30	43
+	+	13	6
+	+	14	1
+	+	15	5
+	+	16	5
+	+	17	7
+	+	5	15
+	+	28	24
+	+	10	40
+	+	17	7
+	+	2	10
+	+	1	31
+	+	27	22
+	+	10	39
+	+	23	0
+	+	22	17
+	+	27	1
+	+	22	0
+	+	12	0
+	+	22	0
+	+	26	23
+	+	11	31
+	+	1	41
+	+	12	3
+	+	18	29
+	+	11	38
 
-> ~/project/fort/part2.f90
-	"	26	19
-	^	26	20
-	.	26	19
-	+	11	20
-	+	24	31
-	+	11	21
-	+	24	34
-	+	11	20
-	+	24	31
-	+	11	20
-	+	24	31
-	+	11	21
-	+	24	8
-	+	31	85
-	+	26	17
-	+	24	12
-	+	29	13
-	+	26	19
+> ~/COE332_review/lectures/week5/test.py
+	"	10	16
+	^	10	17
+	.	10	16
+	+	15	18
+	+	10	16
 
-> ~/project/fort/part2.cpp
+> ~/COE332_review/lectures/week4/app.py
+	"	12	0
+	^	12	0
+	.	11	33
+	+	14	39
+	+	7	23
+	+	5	13
+	+	11	33
+
+> ~/COE332_review/HW/coe332-f2019-hw2/test.py
+	"	1	22
+	^	1	23
+	.	1	22
+	+	1	22
+
+> ~/COE332_review/HW/coe332-f2019-hw2/app/app
 	"	1	0
 
-> ~/project/fort/part1.f90
-	"	4	2
-	^	73	3
-	.	6	25
-	+	4	34
-	+	5	25
-	+	6	25
+> ~/COE332_review/HW/coe332-f2019-hw2/main.py
+	"	1	0
 
-> ~/project/fort/test.f90
-	"	9	8
-	^	9	19
-	.	9	18
-	+	9	18
+> ~/COE332_review/HW/HW2/hw1/hw2_test.py
+	"	28	38
+	^	28	38
+	.	28	37
+	+	26	22
+	+	27	0
+	+	28	37
 
-> ~/project/fort/hw4.f90
-	"	11	8
-
-> ~/project/fort/hw7.f90
-	"	56	2
-
-> ~/hw/stevend-COE322-HW7.f90
-	"	57	2
-
-> ~/hw/test.f90
-	"	5	8
-	^	5	27
-	.	5	26
-	+	6	150
-	+	6	123
-	+	6	151
-	+	8	18
-	+	6	15
-	+	4	23
-	+	6	90
-	+	6	70
-	+	6	213
-	+	6	151
-	+	6	181
-	+	6	196
-	+	6	180
-	+	6	58
-	+	6	52
-	+	6	92
-	+	6	117
-	+	6	210
-	+	6	114
-	+	6	62
-	+	6	51
-	+	6	90
-	+	6	62
-	+	6	152
-	+	6	180
-	+	6	59
-	+	6	33
-	+	6	115
-	+	6	208
-	+	6	44
-	+	6	178
-	+	6	72
-	+	6	111
-	+	6	210
-	+	6	175
-	+	6	120
-	+	6	47
-	+	6	53
-	+	6	119
-	+	6	151
-	+	6	178
-	+	6	107
-	+	6	208
-	+	6	49
-	+	6	105
-	+	7	21
-	+	5	31
-	+	6	16
-	+	7	23
-	+	5	26
-
-> ~/project/p.f90
-	"	1	8
-
-> ~/hw/p.f90
-	"	24	9
-	^	39	26
-	.	39	25
-	+	42	30
-	+	41	20
-	+	42	30
-	+	41	20
-	+	42	30
-	+	47	60
-	+	53	18
-	+	42	14
-	+	47	40
-	+	48	34
-	+	49	26
-	+	5	16
-	+	44	0
-	+	5	89
-	+	5	8
-	+	39	21
-	+	53	24
-	+	54	20
-	+	4	48
-	+	8	86
-	+	8	104
-	+	1	0
-	+	4	49
-	+	4	27
-	+	4	45
-	+	5	17
-	+	4	21
-	+	5	9
-	+	8	60
-	+	8	16
-	+	4	53
-	+	8	58
-	+	8	27
-	+	5	8
-	+	7	16
-	+	39	18
-	+	54	22
-	+	53	19
-	+	53	43
-	+	6	4
-	+	5	34
-	+	8	27
-	+	9	17
-	+	53	24
-	+	39	21
-	+	54	20
-	+	39	25
-
-> ~/project/part3.cpp
-	"	146	3
-	^	128	50
-	.	128	56
-	+	117	39
-	+	118	39
-	+	117	58
-	+	118	58
-	+	137	56
-	+	110	30
-	+	137	52
-	+	113	34
-	+	133	0
-	+	139	24
-	+	11	39
-	+	60	26
-	+	10	35
-	+	113	64
-	+	60	25
-	+	112	59
-	+	110	39
-	+	115	11
-	+	110	50
-	+	115	23
-	+	116	8
-	+	117	7
-	+	118	8
-	+	120	0
-	+	119	7
-	+	137	53
-	+	130	43
-	+	137	20
-	+	139	0
-	+	130	17
-	+	139	44
-	+	130	13
-	+	139	38
-	+	130	14
-	+	140	0
-	+	138	33
-	+	125	17
-	+	103	45
-	+	106	5
-	+	103	0
-	+	175	0
-	+	169	5
-	+	153	39
-	+	156	11
-	+	155	22
-	+	158	78
-	+	168	1
-	+	161	11
-	+	153	65
-	+	161	38
-	+	167	2
-	+	185	29
-	+	151	21
-	+	150	0
-	+	168	1
-	+	153	64
-	+	159	1
-	+	161	3
-	+	162	10
-	+	160	9
-	+	163	9
-	+	158	80
-	+	128	56
-
-> ~/project/part2.cpp
-	"	106	1
-	^	106	3
-	.	107	0
-	+	110	43
-	+	110	43
-	+	113	0
-	+	115	0
-	+	115	35
-	+	115	54
-	+	88	3
-	+	115	0
-	+	110	42
-	+	113	34
-	+	123	0
-	+	114	22
-	+	115	71
-	+	115	0
-	+	111	16
-	+	117	44
-	+	111	15
-	+	123	0
-	+	114	22
-	+	38	35
-	+	111	0
-	+	114	46
-	+	38	22
-	+	115	0
-	+	113	9
-	+	112	21
-	+	115	0
-	+	121	3
-	+	120	10
-	+	117	24
-	+	122	19
-	+	115	65
-	+	116	4
-	+	110	17
-	+	63	40
-	+	66	43
-	+	63	29
-	+	65	0
-	+	66	45
-	+	106	3
-	+	106	39
-	+	123	20
-	+	63	40
-	+	66	40
-	+	67	51
-	+	106	2
-	+	124	0
-	+	110	18
-	+	67	51
-	+	112	22
-	+	113	0
-	+	115	17
-	+	106	211
-	+	106	217
-	+	106	220
-	+	107	0
-	+	90	4
-	+	14	4
-	+	107	0
-
-> ~/project/part1.cpp
-	"	12	4
-	^	12	5
-	.	12	4
-	+	1	0
-	+	1	0
-	+	1	29
-	+	1	12
-	+	1	0
-	+	1	24
-	+	1	0
-	+	1	63
-	+	1	27
-	+	1	2
-	+	1	52
-	+	1	52
-	+	1	0
-	+	1	47
-	+	1	25
-	+	1	53
-	+	1	0
-	+	1	12
-	+	1	0
-	+	1	31
-	+	1	35
-	+	1	67
-	+	1	36
-	+	1	2
-	+	1	38
-	+	1	27
-	+	1	45
-	+	1	15
-	+	1	0
-	+	1	20
-	+	1	10
-	+	1	44
-	+	1	5
-	+	1	0
-	+	1	27
-	+	1	0
-	+	1	26
-	+	1	73
-	+	1	27
-	+	1	0
-	+	1	2
-	+	1	0
-	+	1	16
-	+	1	25
-	+	1	34
-	+	1	7
-	+	1	3
-	+	1	28
-	+	1	3
-	+	1	0
-	+	1	14
-	+	1	28
-	+	1	20
-	+	1	43
-	+	1	34
-	+	1	12
-	+	1	2
-	+	1	3
-	+	1	2
-	+	1	0
-	+	1	2
-	+	1	20
-	+	1	13
-	+	1	0
-	+	1	4
-	+	1	4
-	+	1	0
-	+	1	0
-	+	1	32
-	+	1	26
-	+	1	18
-	+	1	14
-	+	1	20
-	+	1	10
-	+	1	34
-	+	1	4
-	+	1	54
-	+	1	3
-	+	1	0
-	+	1	0
-	+	74	0
-	+	1	0
-	+	2	0
-	+	1	0
-	+	50	18
-	+	53	2
-	+	20	34
-	+	62	0
-	+	67	4
-	+	68	0
-	+	12	4
-	+	13	2
-	+	14	5
-	+	15	2
-	+	16	4
-	+	17	2
-	+	18	4
-	+	19	2
-	+	20	4
-	+	12	4
-
-> ~/project/test4.cpp
-	"	15	2
-	^	15	18
-	.	15	17
-	+	12	179
-	+	12	35
-	+	12	47
-	+	2	15
-	+	9	17
-	+	12	47
-	+	12	44
-	+	12	47
-	+	12	38
-	+	12	18
-	+	12	117
-	+	12	97
-	+	17	0
-	+	12	19
-	+	12	51
-	+	12	56
-	+	12	102
-	+	12	180
-	+	12	65
-	+	12	103
-	+	12	17
-	+	12	157
-	+	12	182
-	+	12	203
-	+	12	48
-	+	12	61
-	+	12	117
-	+	12	44
-	+	12	124
-	+	12	124
-	+	12	178
-	+	4	0
-	+	3	14
-	+	12	23
-	+	16	15
-	+	12	16
-	+	14	16
-	+	13	16
+> ~/COE332_review/HW/HW2/hw1/hw2.py
+	"	37	30
+	^	37	31
+	.	37	30
 	+	16	16
-	+	15	17
+	+	43	18
+	+	60	17
+	+	44	0
+	+	39	18
+	+	28	51
+	+	37	30
 
-> ~/project/test3.cpp
-	"	129	0
-	^	156	26
-	.	156	25
-	+	4	11
-	+	3	11
-	+	5	16
-	+	4	11
-	+	5	16
-	+	10	0
-	+	8	17
-	+	9	0
-	+	8	15
-	+	124	45
-	+	135	7
-	+	124	45
-	+	128	67
-	+	132	43
-	+	129	46
-	+	133	29
-	+	132	44
-	+	128	67
-	+	135	3
-	+	129	55
-	+	130	42
-	+	136	2
-	+	155	47
-	+	128	10
-	+	125	5
-	+	124	5
-	+	138	24
-	+	141	2
-	+	139	2
-	+	140	2
-	+	141	4
-	+	146	4
-	+	148	2
-	+	147	17
-	+	157	16
-	+	144	28
-	+	157	36
-	+	153	18
-	+	155	44
-	+	153	18
-	+	155	45
-	+	168	33
-	+	155	22
-	+	157	0
-	+	155	22
-	+	156	25
-
-> ~/project/test.cpp
-	"	11	0
-	^	126	0
-	.	117	0
-	+	6	11
-	+	5	11
-	+	27	0
-	+	10	26
-	+	11	17
-	+	19	45
-	+	18	1
-	+	27	0
-	+	19	52
-	+	11	18
-	+	15	48
-	+	15	72
-	+	19	55
-	+	13	21
-	+	15	4
-	+	15	33
-	+	15	56
-	+	15	33
-	+	19	30
-	+	14	40
-	+	19	24
-	+	14	26
-	+	10	13
-	+	11	16
-	+	13	26
-	+	14	39
-	+	15	1
-	+	13	17
-	+	15	29
-	+	2	14
-	+	17	48
-	+	19	22
-	+	19	38
-	+	19	28
-	+	19	52
-	+	19	81
-	+	27	0
-	+	19	42
-	+	11	15
-	+	14	25
-	+	22	13
-	+	3	15
-	+	8	17
-	+	22	16
-	+	24	15
-	+	23	0
-	+	25	0
-	+	23	1
-	+	24	0
-	+	23	1
-	+	24	2
-	+	25	1
-	+	24	14
-	+	20	28
-	+	21	9
-	+	26	40
-	+	22	29
-	+	24	18
-	+	114	23
-	+	112	24
-	+	115	20
-	+	108	0
-	+	116	19
-	+	112	20
-	+	116	42
-	+	112	26
-	+	117	0
-
-> ~/test.cpp
+> ~/COE332_review/HW/HW2/hw1/test.py
 	"	1	0
 	^	1	0
+	.	1	0
+	+	1	15
+	+	1	0
+
+> ~/COE332_review/HW/HW2/hw1/hw1_test.py
+	"	63	0
+
+> ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1.py
+	"	3	0
+	^	3	0
+	.	43	32
+	+	18	0
+	+	6	23
+	+	47	44
+	+	47	49
+	+	47	30
+	+	47	21
+	+	7	49
+	+	4	10
+	+	12	19
+	+	7	67
+	+	12	64
+	+	7	99
+	+	12	4
+	+	18	0
+	+	12	33
+	+	17	24
+	+	18	11
+	+	10	3
+	+	7	28
+	+	7	2
+	+	9	3
+	+	8	1
+	+	9	2
+	+	10	3
+	+	12	4
+	+	17	3
+	+	1	10
+	+	23	2
+	+	22	1
+	+	24	13
+	+	22	29
+	+	26	16
+	+	24	42
+	+	26	32
+	+	35	25
+	+	37	18
+	+	26	28
+	+	30	25
+	+	34	16
+	+	30	17
+	+	34	8
+	+	47	20
+	+	47	21
+	+	48	0
+	+	43	32
+	+	11	23
+	+	12	38
+	+	16	32
+	+	12	44
+	+	11	13
+	+	14	39
+	+	13	13
+	+	16	37
+	+	11	21
+	+	43	32
+
+> ~/COE332_review/HW/coe332-f2019-hw1/hw1/hw1_test.py
+	"	62	0
+	^	61	42
+	.	61	41
+	+	46	40
+	+	50	17
+	+	48	41
+	+	50	29
+	+	53	1
+	+	52	0
+	+	53	37
+	+	51	37
+	+	52	2
+	+	53	2
+	+	52	45
+	+	53	37
+	+	51	38
+	+	45	39
+	+	46	2
+	+	46	41
+	+	48	0
+	+	46	41
+	+	47	21
+	+	48	40
+	+	62	0
+	+	59	40
+	+	61	41
+
+> ~/COE332_review/HW/coe332-f2019-hw1/rainfall.csv
+	"	1	0
+
+> ~/COE332_review/HW/coe332-f2019-hw1/results.txt
+	"	1	0
+
+> ~/COE332_review/HW/coe332-f2019-hw1/main.py
+	"	13	1
